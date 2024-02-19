@@ -1,0 +1,27 @@
+@import '../../../styles.scss';
+
+nav {
+    @include flex-box($jc: space-between);
+    @extend .side-margin;
+    height: 109px;
+    >a {
+        font-size: 42px;
+        font-weight: 700;
+        text-decoration: none
+    }
+
+    >span {
+        @include flex-box();
+        gap: 29px;
+        font-size: 23px;
+
+        >a {
+            text-decoration: none;
+            transition: all 200ms linear;
+
+            &:hover {
+                color: #70E61C;
+            }
+        }
+    }
+}
