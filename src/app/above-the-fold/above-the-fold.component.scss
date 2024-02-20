@@ -114,7 +114,7 @@ section {
     margin-top: -185px;
     padding-right: calc(33% - 410px);
 
-    >div{
+    >div {
         &:first-of-type {
             @include flex-box($jc: flex-start);
             gap: 2.5%;
@@ -128,13 +128,18 @@ section {
                 border-radius: 10px;
             }
 
-            >img {
-                background-color: transparent;
-            }
-    
             >a {
                 background-color: transparent;
                 text-decoration: none;
+
+                >img {
+                    background-color: transparent;
+                    transition: all 100ms ease-in-out;
+    
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
             }
         }
 
@@ -145,7 +150,7 @@ section {
             background-color: transparent;
             text-wrap: nowrap;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             >p {
                 background-color: transparent;
             }

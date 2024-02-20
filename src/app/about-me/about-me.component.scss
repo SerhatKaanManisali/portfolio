@@ -1,0 +1,58 @@
+@import '../../styles.scss';
+
+section {
+    @include flex-box($jc: space-between);
+    min-width: 100%;
+}
+
+.info-container {
+    @include flex-box($ai: flex-start);
+    @extend .side-padding;
+    z-index: 1;
+    background-color: transparent;
+    max-width: 60%;
+    flex-direction: column;
+    gap: 35px;
+
+    >h1 {
+        font-size: 90px;
+        background-color: transparent;
+    }
+
+    p {
+        font-size: 16px;
+        text-wrap: pretty;
+    }
+
+    >span {
+        @include flex-box();
+        gap: 35px;
+
+        >img {
+            transition: all 100ms ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.picture-container {
+    @include flex-box($jc: flex-end);
+    z-index: 1;
+    background-color: transparent;
+    width: 50%;
+
+    >div {
+        height: 4px;
+        width: calc(66% - 280px);
+        background-color: #70E61C;
+    }
+
+    >img {
+        border-radius: 100%;
+        border: 4px solid #70E61C;
+        height: 500px;
+    }
+}
