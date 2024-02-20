@@ -3,6 +3,15 @@
 section {
     @include flex-box($jc: space-between);
     min-width: 100%;
+    position: relative;
+
+    >img {
+        position: absolute;
+        z-index: 1;
+        background-color: transparent;
+        right: -450px;
+        top: -300px;
+    }
 }
 
 .info-container {
@@ -40,7 +49,7 @@ section {
 
 .picture-container {
     @include flex-box($jc: flex-end);
-    z-index: 1;
+    z-index: 2;
     background-color: transparent;
     width: 50%;
 
