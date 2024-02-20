@@ -1,0 +1,152 @@
+@import '../../styles.scss';
+
+section {
+    @include flex-box();
+    @extend .side-padding;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 100%;
+    height: 80vh;
+
+    >div {
+        @include flex-box($jc: space-between);
+        width: 100%;
+    }
+
+    >img {
+        position: absolute;
+        width: 100%;
+        top: 305px;
+        z-index: 1;
+        background-color: transparent;
+    }
+}
+
+.portrait-container {
+    position: relative;
+    height: 800px;
+    width: 500px;
+
+    >img {
+        position: absolute;
+        background-color: transparent;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+
+        &:first-of-type {
+            left: -150px;
+            top: 150px;
+        }
+
+        &:last-of-type {
+            height: 750px;
+        }
+    }
+}
+
+.main-text {
+    @include flex-box();
+    flex-direction: column;
+    gap: 40px;
+    z-index: 2;
+    background-color: transparent;
+
+    >button {
+        background-color: #70E61C;
+        font-weight: 400;
+        padding: 15px 30px;
+        border-radius: 10px;
+        border: unset;
+        cursor: pointer;
+        transition: all 100ms ease-out;
+
+        &:hover {
+            background-color: #9747FF;
+            transform: scale(1.1);
+        }
+    }
+
+    >span {
+        @include flex-box();
+        background-color: transparent;
+
+        >span {
+            display: flex;
+            flex-direction: column;
+            text-wrap: nowrap;
+            background-color: transparent;
+
+            >h1 {
+                font-size: 82px;
+                background-color: transparent;
+            }
+
+            >h2 {
+                font-size: 50px;
+                font-weight: 400;
+                color: #9747FF;
+                background-color: transparent;
+                text-align: center;
+            }
+        }
+
+        >h3 {
+            margin-top: 20px;
+            font-size: 66px;
+            font-weight: 400;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            background-color: transparent;
+        }
+    }
+}
+
+.end {
+    @include flex-box($jc: space-between);
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    width: 100%;
+    height: 100px;
+    margin-top: calc(6% - 110px);
+    padding-right: calc(33% - 410px);
+
+    >div{
+        &:first-of-type {
+            @include flex-box($jc: flex-start);
+            gap: 2.5%;
+            width: 100%;
+            background-color: transparent;
+    
+            >div {
+                width: calc(33% - 370px);
+                height: 4px;
+                background-color: #9747FF;
+                border-radius: 10px;
+            }
+    
+            >a {
+                background-color: transparent;
+                text-decoration: none;
+            }
+        }
+
+        &:last-of-type {
+            @include flex-box();
+            align-self: flex-end;
+            writing-mode: vertical-lr;
+            background-color: transparent;
+            text-wrap: nowrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            >p {
+                background-color: transparent;
+            }
+
+            >img {
+                margin-right: 4px;
+            }
+        }
+    }
+}

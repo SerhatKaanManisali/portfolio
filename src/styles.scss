@@ -4,13 +4,14 @@
      align-items: $ai;
 }
 
-.side-margin {
-     margin: 0 calc(30% - 300px);
+.side-padding {
+     padding: 0 calc(33% - 400px);
 }
 
 *{
      margin: 0;
      font-family: 'Poppins', 'Arial', sans-serif;
+     font-size: 23px;
      box-sizing: border-box;
      color: white;
      background-color: #141D2F;
