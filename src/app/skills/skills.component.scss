@@ -6,48 +6,62 @@ section {
     min-height: 50vh;
     width: 100%;
     margin-top: 200px;
+    position: relative;
 
-    >div {
-        @include flex-box($jc: space-between);
-        &:first-of-type {
-            @include flex-box($jc: flex-start);
-            flex-wrap: wrap;
-            gap: 140px;
-            text-align: center;
+    >ul {
+        @include flex-box();
+        list-style: none;
+        flex-wrap: wrap;
+        gap: 80px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-left: 0;
+        text-wrap: nowrap;
+        width: 60%;
 
-            img {
-                width: 70px;
-                transition: all 100ms ease-in-out;
+        img {
+            transition: all 100ms ease-in-out;
 
-                &:hover {
-                    transform: translateY(-20px);
-                }
-            }
-        }
-
-        &:last-of-type {
-            @include flex-box();
-            flex-direction: column;
-            gap: 35px;
-
-            >div {
-                @include flex-box();
-                
-                >h1{
-                    font-size: 90px;
-                }
-
-                >div {
-                    height: 4px;
-                    width: 50px;
-                    background-color: #9747FF;
-                }
-            }
-
-            >p {
-                font-size: 16px;
-                text-align: end;
+            &:hover {
+                transform: translateY(-20px);
             }
         }
     }
+
+    >span {
+        @include flex-box();
+        flex-direction: column;
+        gap: 35px;
+        background-color: transparent;
+        width: 30%;
+
+        >h1 {
+            font-size: 90px;
+            align-self: flex-end;
+            text-wrap: nowrap;
+        }
+
+        >p {
+            font-size: 16px;
+            text-align: end;
+            text-wrap: pretty;
+            background-color: transparent;
+        }
+
+        >a {
+            text-decoration: none;
+        }
+    }
+}
+
+.line {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 32.5%;
+    height: 4px;
+    width: calc(33% - 410px);
+    background-color: #9747FF;
+    border-radius: 10px;
 }
