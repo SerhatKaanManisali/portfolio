@@ -1,0 +1,15 @@
+<div id="portfolio"></div>
+<header>
+    <span>
+        <div></div>
+        <h1>Portfolio</h1>
+        <div></div>
+    </span>
+    <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+</header>
+
+<section>
+    @for (project of projects; track projects; let even = $even;) {
+        <app-project [project]="project" [even]="even"></app-project>
+    }
+</section>

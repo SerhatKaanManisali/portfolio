@@ -1,46 +1,12 @@
+<div id="skills"></div>
 <section>
     <ul>
+        @for (skill of skills; track $index) {
         <li>
-            <img src="assets/img/angular.png">
-            <p>Angular</p>
+            <img src="{{skill.path}}">
+            <p>{{skill.name}}</p>
         </li>
-        <li>
-            <img src="assets/img/typescript.png">
-            <p>Typescript</p>
-        </li>
-        <li>
-            <img src="assets/img/javascript.png">
-            <p>Javascript</p>
-        </li>
-        <li>
-            <img src="assets/img/html.png">
-            <p>HTML</p>
-        </li>
-        <li>
-            <img src="assets/img/firebase.png">
-            <p>Firebase</p>
-        </li>
-        <li>
-            <img src="assets/img/git.png">
-            <p>Git</p>
-        </li>
-        <li>
-            <img src="assets/img/css.png">
-            <p>CSS</p>
-        </li>
-        <li>
-            <img src="assets/img/rest-api.png">
-            <p>Rest-Api</p>
-        </li>
-        <li>
-            <img src="assets/img/scrum.png">
-            <p>Srum</p>
-        </li>
-        <li>
-            <img src="assets/img/material-design.png">
-            <p>Material</p>
-            <p>Design</p>
-        </li>
+        }
     </ul>
     <span>
         <h1>My Skills</h1>
@@ -48,4 +14,5 @@
         <a href="#contact" class="primary-button">Get in touch</a>
     </span>
     <div class="line"></div>
+    <img src="assets/img/skills-shadow.png">
 </section>

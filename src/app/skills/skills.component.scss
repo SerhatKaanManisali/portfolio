@@ -5,23 +5,36 @@ section {
     @extend .side-padding;
     min-height: 50vh;
     width: 100%;
-    margin-top: 200px;
     position: relative;
+    background-color: transparent;
 
     >ul {
         @include flex-box();
+        z-index: 1;
         list-style: none;
         flex-wrap: wrap;
         gap: 80px;
         text-align: center;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        padding-left: 0;
+        margin-left: -5%;
         text-wrap: nowrap;
         width: 60%;
+        background-color: transparent;
+
+        >li {
+            background-color: transparent;
+
+            >p {
+                background-color: transparent;
+            }
+        }
+
+
 
         img {
             transition: all 100ms ease-in-out;
+            background-color: transparent;
 
             &:hover {
                 transform: translateY(-20px);
@@ -53,15 +66,26 @@ section {
             text-decoration: none;
         }
     }
+
+    >div {
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        top: 32.5%;
+        height: 4px;
+        width: calc(33% - 410px);
+        background-color: #9747FF;
+        border-radius: 10px;
+    }
+
+    >img {
+        position: absolute;
+        left: 0;
+        top: 25%;
+        background-color: transparent;
+    }
 }
 
-.line {
-    position: absolute;
-    z-index: 3;
-    right: 0;
-    top: 32.5%;
-    height: 4px;
-    width: calc(33% - 410px);
-    background-color: #9747FF;
-    border-radius: 10px;
+#skills {
+    height: 200px;
 }

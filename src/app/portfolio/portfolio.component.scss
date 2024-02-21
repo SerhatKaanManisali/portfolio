@@ -1,0 +1,46 @@
+@import '../../styles.scss';
+
+header {
+    @include flex-box();
+    flex-direction: column;
+    width: 100%;
+
+    >span {
+        @include flex-box($jc: flex-end);
+        width: 100%;
+        >h1 {
+            font-size: 90px;
+            margin: 0 20px;
+        }
+
+        >div {
+            &:first-of-type {
+                background-color: #9747FF;
+                height: 4px;
+                width: 100px;
+                border-radius: 10px;
+            }
+    
+            &:last-of-type {
+                background-color: #9747FF;
+                height: 4px;
+                width: calc(50% - 194px);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    >p {
+        font-size: 16px;
+    }
+}
+
+section {
+    @extend .side-padding;
+    width: 100%;
+    min-height: 50vh;
+}
+
+#portfolio {
+    height: 200px;
+}
