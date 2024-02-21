@@ -53,21 +53,6 @@ section {
     background-color: transparent;
     margin-top: 10%;
 
-    >button {
-        background-color: #70E61C;
-        font-weight: 400;
-        padding: 15px 30px;
-        border-radius: 10px;
-        border: unset;
-        cursor: pointer;
-        transition: all 100ms ease-out;
-
-        &:hover {
-            background-color: #9747FF;
-            transform: scale(1.1);
-        }
-    }
-
     >span {
         @include flex-box();
         background-color: transparent;

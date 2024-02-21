@@ -1,0 +1,53 @@
+@import '../../styles.scss';
+
+section {
+    @include flex-box($jc: space-between);
+    @extend .side-padding;
+    min-height: 50vh;
+    width: 100%;
+    margin-top: 200px;
+
+    >div {
+        @include flex-box($jc: space-between);
+        &:first-of-type {
+            @include flex-box($jc: flex-start);
+            flex-wrap: wrap;
+            gap: 140px;
+            text-align: center;
+
+            img {
+                width: 70px;
+                transition: all 100ms ease-in-out;
+
+                &:hover {
+                    transform: translateY(-20px);
+                }
+            }
+        }
+
+        &:last-of-type {
+            @include flex-box();
+            flex-direction: column;
+            gap: 35px;
+
+            >div {
+                @include flex-box();
+                
+                >h1{
+                    font-size: 90px;
+                }
+
+                >div {
+                    height: 4px;
+                    width: 50px;
+                    background-color: #9747FF;
+                }
+            }
+
+            >p {
+                font-size: 16px;
+                text-align: end;
+            }
+        }
+    }
+}

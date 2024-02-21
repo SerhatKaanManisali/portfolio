@@ -15,7 +15,10 @@ nav {
     >a {
         font-size: 42px;
         font-weight: 700;
-        text-decoration: none
+        text-decoration: none;
+        >img {
+            background-color: transparent
+        }
     }
 
     >span {
