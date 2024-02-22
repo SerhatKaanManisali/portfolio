@@ -1,8 +1,8 @@
-<div>
+<div class="project-container" [ngStyle]="{'margin-left' : even ? '5%' : '-5%'}">
     @if (even) {
         <img src="{{project.path}}">
     }
-    <div>
+    <div [ngStyle]="{'align-items' : even ? 'flex-start' : 'flex-end', 'text-align' : even ? 'start' : 'end'}">
         <h1>{{project.name}}</h1>
         <ul>
             @for (skill of project.skills; track $index) {
@@ -10,12 +10,11 @@
             }
         </ul>
         <p>{{project.description}}</p>
-        <div>
-            <a href="{{project.testLink}}">Live test</a>
-            <a href="{{project.gitHubLink}}">Github</a>
+        <div class="buttons">
+            <a href="{{project.testLink}}" target="_blank">Live test</a>
+            <a href="{{project.gitHubLink}}" target="_blank">Github</a>
         </div>
     </div>
-
     @if (!even) {
         <img src="{{project.path}}">
     }

@@ -23,7 +23,7 @@ export class PortfolioComponent {
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quam illum libero saepe sed corporis cum, molestias ipsam ab voluptatibus eius quibusdam soluta id magni aliquid necessitatibus voluptatum facere repellendus.',
         testLink: '',
         gitHubLink: 'https://github.com/SerhatKaanManisali/join',
-        path: 'src/assets/img/join.png'
+        path: 'assets/img/join.png'
       },
       {
         name: 'El Pollo Loco',
@@ -31,7 +31,7 @@ export class PortfolioComponent {
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quam illum libero saepe sed corporis cum, molestias ipsam ab voluptatibus eius quibusdam soluta id magni aliquid necessitatibus voluptatum facere repellendus.',
         testLink: '',
         gitHubLink: 'https://github.com/SerhatKaanManisali/el-pollo-loco',
-        path: 'src/assets/img/el-pollo-loco.png'
+        path: 'assets/img/el-pollo-loco.png'
       }
     ]
 }

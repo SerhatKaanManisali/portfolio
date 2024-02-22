@@ -1,7 +1,26 @@
 @import '../../../styles.scss';
 
-div {
+.project-container {
+    @include flex-box();
+    gap: 10%;
+    width: 100%;
+
     >div {
+        @include flex-box();
+        flex-direction: column;
+        gap: 15px;
+        text-wrap: wrap;
+
+        >h1 {
+            font-size: 32px;
+            color: #9747FF;
+        }
+
+        >p {
+            font-size: 16px;
+            max-width: 90%;
+        }
+
         >ul {
             margin: 0;
             padding: 0;
@@ -9,11 +28,38 @@ div {
             >li {
                 list-style-type: none;
                 display: inline;
+                color: #70E61C;
 
                 &:not(:first-child)::before {
                     content: " | ";
                 }
             }
+        }
+    }
+}
+
+.buttons {
+    @include flex-box();
+    margin-top: 30px;
+    gap: 85px;
+
+    a {
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        transition: all 100ms ease-in-out;
+        
+        &:first-of-type {
+            background-color: #9747FF;
+
+        }
+
+        &:last-of-type {
+            border: 1px solid #70E61C;
+        }
+
+        &:hover {
+            background-color: #70E61C;
         }
     }
 }
