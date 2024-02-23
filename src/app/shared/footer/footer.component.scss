@@ -17,19 +17,19 @@ section {
         >div {
             @include flex-box();
             gap: 42px;
+
+            img {
+                transition: all 100ms ease-in-out;
+    
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
         }
     }
 
-    a {
+    >a {
         text-decoration: none;
         font-size: 16px;
-
-        >img {
-            transition: all 100ms ease-in-out;
-
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
     }
 }

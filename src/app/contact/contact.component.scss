@@ -76,38 +76,15 @@ section {
                 >input[type=text],
                 [type=email] {
                     @extend .input-style;
-
-                    &:hover {
-                        border-color: #70E61C !important;
-                    }
-
-                    &:focus {
-                        border-color: #70E61C !important;
-                    }
-                }
-
-                >input[type=checkbox] {
-                    -webkit-appearance: none;
-                    background-image: url('../../assets/img/check-box-unchecked.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    width: 18px;
-                    height: 18px;
-                    z-index: 1;
-                    cursor: pointer;
                 }
 
                 >textarea {
                     @extend .input-style;
                     resize: none;
-
-                    &:hover {
-                        border-color: #70E61C !important;
-                    }
                 }
             }
 
-            button {
+            >input[type=submit] {
                 padding: 15px 30px;
                 border: unset;
                 border-radius: 10px;
@@ -125,9 +102,52 @@ section {
     }
 }
 
+.default {
+    border-color: #9747FF;
+
+    &:hover {
+        border-color: #70E61C;
+    }
+
+    &:focus {
+        border-color: #70E61C;
+    }
+}
+
+.valid {
+    border-color: #70E61C !important;
+    background-image: url('../../assets/img/valid.png');
+    background-repeat: no-repeat;
+    background-position: (98% 13px);
+    
+}
+
+.invalid {
+    border-color: #E61C40 !important;
+    background-image: url('../../assets/img/invalid.png');
+    background-repeat: no-repeat;
+    background-position: (98% 13px);
+}
+
+.enabled {
+    background-color: #70E61C !important;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #9747FF !important;
+        transform: scale(1.1);
+    }
+}
+
 .checkbox-container {
     @include flex-box($ai: center !important, $jc: flex-start !important);
     flex-direction: row !important;
+
+    >img {
+        cursor: pointer;
+        z-index: 1;
+    }
 }
 
 span {

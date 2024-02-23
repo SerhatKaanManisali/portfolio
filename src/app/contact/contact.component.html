@@ -7,41 +7,60 @@
     <div>
         <span>
             <h2>Got a problem to solve?</h2>
-            <span>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to
+            <span>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing
+                to
                 your projects with my work.</span>
             <span>Need a Frontend developer? <b>Contact me!</b></span>
         </span>
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <label for="name">
-                <input #name="ngModel" [(ngModel)]="contactData.name" [ngStyle]="{'border-color': name.valid ? '#9747FF' : '#E61C40'}" type="text" name="" id="" placeholder="Your name"
-                    required>
+                <input #name="ngModel" [(ngModel)]="contactData.name"
+                [ngClass]="name.touched?{valid : name.valid, invalid : name.invalid} : {}"
+                    type="text" name="name" placeholder="Your name" required>
                 @if (!name.valid && name.touched) {
                 <p>Your name is required</p>
                 }
             </label>
             <label for="email">
-                <input #email="ngModel" [(ngModel)]="contactData.email" [ngStyle]="{'border-color': email.valid ? '#9747FF' : '#E61C40'}" type="email" name="" id=""
-                    placeholder="Your email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                <input #email="ngModel" [(ngModel)]="contactData.email"
+                [ngClass]="email.touched?{valid : email.valid, invalid : email.invalid} : {}"
+                    type="email" name="email" placeholder="Your email" required
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                 @if (!email.valid && email.touched) {
                 <p>Your email is required</p>
                 }
             </label>
             <label for="message">
-                <textarea #message="ngModel" [(ngModel)]="contactData.message" [ngStyle]="{'border-color': message.valid ? '#9747FF' : '#E61C40'}" name="" id="" cols="30" rows="10"
-                    placeholder="Your message" required minlength="4"></textarea>
+                <textarea #message="ngModel" [(ngModel)]="contactData.message"
+                    [ngClass]="message.touched?{valid : message.valid, invalid : message.invalid} : {}"
+                    name="message" cols="30" rows="10" placeholder="Your message" required minlength="4"></textarea>
                 @if (!message.valid && message.touched) {
-                <p>Your message is empty</p>
+                <p>Your message is too short</p>
                 }
             </label>
-            <label class="checkbox-container"><input type="checkbox" name="" id="">
+            <label class="checkbox-container" (mouseenter)="checkBoxBackground = true" (mouseleave)="checkBoxBackground = false">
+                @if (!checked) {
+                <img #checkBox (click)="toggleCheckBox()" [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}" src="assets/img/check-box-unchecked.png">
+                }
+                @else {
+                <img #checkBox (click)="toggleCheckBox()" [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}" src="assets/img/check-box-checked.png">
+                }
                 <span>I've read the
                     <a href="">privacy policy</a>
                     and agree to the processing of my data as outlined.
                 </span>
             </label>
-            <button type="submit">Send message :)</button>
+            <input [ngClass]="{enabled : checked && name.valid && email.valid && message.valid}" type="submit"
+                value="Send message :)" [disabled]="!(checked && name.valid && email.valid && message.valid)">
         </form>
         <img src="assets/img/contact-shadow.png">
     </div>
-    <a href="#"><img src="assets/img/arrow-up.png"></a>
+    <a href="#" (mouseenter)="greenArrow = true" (mouseleave)="greenArrow = false">
+        @if (greenArrow) {
+        <img src="assets/img/arrow-up-green.png">
+        }
+        @else {
+        <img src="assets/img/arrow-up.png">
+        }
+    </a>
 </section>
