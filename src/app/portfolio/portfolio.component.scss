@@ -2,7 +2,6 @@
 
 header {
     @include flex-box();
-    @extend .side-padding;
     flex-direction: column;
     width: 100%;
 
@@ -41,6 +40,16 @@ section {
     @extend .side-padding;
     width: 100%;
     min-height: 50vh;
+    position: relative;
+    
+    >img {
+        &:last-of-type {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: transparent;
+        }
+    }
 }
 
 #portfolio {

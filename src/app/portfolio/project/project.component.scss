@@ -4,6 +4,11 @@
     @include flex-box();
     gap: 10%;
     width: 100%;
+    
+    >img {
+        z-index: 1;
+        background-color: transparent
+    }
 
     >div {
         @include flex-box();
