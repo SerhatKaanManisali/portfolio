@@ -29,10 +29,26 @@ nav {
         >a {
             text-decoration: none;
             transition: all 100ms ease-in-out;
+            
 
             &:hover {
                 color: #70E61C;
             }
         }
+    }
+}
+
+.highlighted {
+    position: relative;
+    color: #70E61C;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 3px;
+        width: 55px;
+        background-color: #9747FF;
+        border-radius: 10px;
     }
 }

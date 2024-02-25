@@ -1,8 +1,8 @@
 <nav>
-    <a href="#"><img src="assets/img/name.png"></a>
+    <a href="#" (click)="highlightLink(0)"><img src="assets/img/name.png"></a>
     <span>
-        <a href="#about-me">About me</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#about-me" (click)="highlightLink(1)" [ngClass]="{'highlighted' : highlightedLinkIndex === 1}">About me</a>
+        <a href="#skills" (click)="highlightLink(2)" [ngClass]="{'highlighted' : highlightedLinkIndex === 2}">Skills</a>
+        <a href="#portfolio" (click)="highlightLink(3)" [ngClass]="{'highlighted' : highlightedLinkIndex === 3}">Portfolio</a>
     </span>
 </nav>

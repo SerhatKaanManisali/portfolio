@@ -1,3 +1,6 @@
+$primaryColor: #9747FF;
+$secondaryColor: #70E61C;
+
 @mixin flex-box($jc: center, $ai: center) {
      display: flex;
      justify-content: $jc;
