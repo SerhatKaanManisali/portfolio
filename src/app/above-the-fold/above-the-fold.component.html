@@ -1,9 +1,11 @@
 <section>
     <div>
-        <div class="portrait-container">
+        @if (isElementVisible) {
+        <div #elementToAnimate class="portrait-container" @flyIn>
             <img src="assets/img/portrait-shadow.png">
             <img src="assets/img/landing-page-portrait.png">
         </div>
+        }
         <div class="main-text">
             <span>
                 <h3>I am</h3>
@@ -22,7 +24,8 @@
         <div></div>
         <a href="https://github.com/SerhatKaanManisali" target="_blank"><img src="assets/img/github.png"></a>
         <a href="mailto:serhat.manisali.02@gmail.com"><img src="assets/img/email.png"></a>
-        <a href="https://www.linkedin.com/in/serhat-kaan-manisali" target="_blank"><img src="assets/img/linked-in.png"></a>
+        <a href="https://www.linkedin.com/in/serhat-kaan-manisali" target="_blank"><img
+                src="assets/img/linked-in.png"></a>
         <a href="mailto:serhat.manisali.02@gmail.com" target="_blank">serhat.manisali.02&#64;gmail.com</a>
     </div>
     <div>
