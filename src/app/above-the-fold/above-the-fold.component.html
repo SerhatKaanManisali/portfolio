@@ -1,12 +1,13 @@
 <section>
     <div>
         @if (isElementVisible) {
-        <div #elementToAnimate class="portrait-container" @flyIn>
+        <div #elementToAnimate class="portrait-container" @flyInLeft>
             <img src="assets/img/portrait-shadow.png">
             <img src="assets/img/landing-page-portrait.png">
         </div>
         }
-        <div class="main-text">
+        @if (isElementVisible) {
+        <div class="main-text" @flyInRight>
             <span>
                 <h3>I am</h3>
                 <span>
@@ -16,11 +17,13 @@
             </span>
             <a href="#contact" class="primary-button">Let's talk!</a>
         </div>
+        }
     </div>
     <img src="assets/img/background-shape.png">
 </section>
 <div class="end">
-    <div>
+    @if (isElementVisible) {
+    <div @flyInLeft>
         <div></div>
         <a href="https://github.com/SerhatKaanManisali" target="_blank"><img src="assets/img/github.png"></a>
         <a href="mailto:serhat.manisali.02@gmail.com"><img src="assets/img/email.png"></a>
@@ -28,8 +31,11 @@
                 src="assets/img/linked-in.png"></a>
         <a href="mailto:serhat.manisali.02@gmail.com" target="_blank">serhat.manisali.02&#64;gmail.com</a>
     </div>
-    <div>
+    }
+    @if (isElementVisible) {
+    <div @flyInRight>
         <p>Scroll down</p>
         <img src="assets/img/arrow-down.png">
     </div>
+    }
 </div>

@@ -10,17 +10,32 @@ import { Component, HostListener, ViewChild, ElementRef, OnInit } from '@angular
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss',
   animations: [
-    trigger('flyIn', [
+    trigger('flyInLeft', [
       transition(':enter', [
         style({
           opacity: 0,
-          left: -100
+          transform: 'translateX(-25%)'
         }),
         animate(
           '0.5s ease-in-out',
           style({
             opacity: 1,
-            left: 0
+            transform: 'translateX(0%)'
+          })
+        )
+      ])
+    ]),
+    trigger('flyInRight', [
+      transition(':enter', [
+        style({
+          opacity: 0,
+          transform: 'translateX(25%)'
+        }),
+        animate(
+          '0.5s ease-in-out',
+          style({
+            opacity: 1,
+            transform: 'translateX(0%)'
           })
         )
       ])
