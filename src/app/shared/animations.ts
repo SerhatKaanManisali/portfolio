@@ -1,4 +1,4 @@
-import { trigger, transition, style, animate } from '@angular/animations';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 
 
 export const flyInLeft = trigger('flyInLeft', [
@@ -31,4 +31,21 @@ export const flyInRight = trigger('flyInRight', [
       })
     )
   ])
+])
+
+export const hover = trigger('hover', [
+  state(
+    'top',
+    style({
+      transform: 'translateY(-10%)'
+    })
+  ),
+  state(
+    'bottom',
+    style({
+      transform: 'translateY(0%)'
+    })
+  ),
+  transition('top => bottom', [animate('0.5s ease-in-out')]),
+  transition('bottom => top', [animate('0.5s ease-in-out')])
 ])
