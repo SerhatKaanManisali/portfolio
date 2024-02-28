@@ -4,10 +4,12 @@ header {
     @include flex-box();
     flex-direction: column;
     width: 100%;
+    background-color: transparent;
 
     >span {
         @include flex-box($jc: flex-end);
         width: 100%;
+        background-color: transparent;
 
         >h1 {
             font-size: 90px;
@@ -41,6 +43,7 @@ section {
     width: 100%;
     min-height: 50vh;
     position: relative;
+    background-color: transparent;
     
     >img {
         &:last-of-type {

@@ -1,12 +1,12 @@
 <section>
     <div>
-        @if (isElementVisible) {
-        <div #elementToAnimate class="portrait-container" @flyInLeft>
+        @if (isVisible) {
+        <div class="portrait-container" @flyInLeft>
             <img src="assets/img/portrait-shadow.png">
-            <img src="assets/img/landing-page-portrait.png">
+            <img src="assets/img/above-the-fold-portrait.png">
         </div>
         }
-        @if (isElementVisible) {
+        @if (isVisible) {
         <div class="main-text" @flyInRight>
             <span>
                 <h3>I am</h3>
@@ -22,7 +22,7 @@
     <img src="assets/img/background-shape.png">
 </section>
 <div class="end">
-    @if (isElementVisible) {
+    @if (isVisible) {
     <div @flyInLeft>
         <div></div>
         <a href="https://github.com/SerhatKaanManisali" target="_blank"><img src="assets/img/github.png"></a>
@@ -32,8 +32,8 @@
         <a href="mailto:serhat.manisali.02@gmail.com" target="_blank">serhat.manisali.02&#64;gmail.com</a>
     </div>
     }
-    @if (isElementVisible) {
-    <div @flyInRight>
+    @if (isVisible) {
+    <div id="scroll-symbol" @flyInRight>
         <p>Scroll down</p>
         <img src="assets/img/arrow-down.png">
     </div>

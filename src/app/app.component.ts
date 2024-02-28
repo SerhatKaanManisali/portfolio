@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -13,9 +14,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, NavBarComponent, AboutMeComponent, SkillsComponent, PortfolioComponent, ContactComponent, FooterComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'portfolio';
+  
 }

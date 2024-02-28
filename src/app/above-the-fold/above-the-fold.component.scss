@@ -24,23 +24,23 @@ section {
 
 .portrait-container {
     position: relative;
-    height: 800px;
-    width: 500px;
+    height: 1000px;
+    width: 1000px;
 
     >img {
         position: absolute;
         background-color: transparent;
-        top: 0;
-        left: 0;
         height: 100%;
 
         &:first-of-type {
-            left: -150px;
+            left: -200px;
             top: 150px;
         }
 
         &:last-of-type {
-            height: 750px;
+            top: -90px;
+            left: 0;
+            height: 1000px;
         }
     }
 }
@@ -66,7 +66,7 @@ section {
             >h1 {
                 font-size: 58px;
                 background-color: transparent;
-                
+
             }
 
             >h2 {
@@ -109,7 +109,7 @@ section {
             gap: 2.5%;
             width: 100%;
             background-color: transparent;
-    
+
             >div {
                 width: calc(33% - 370px);
                 height: 4px;
@@ -124,7 +124,7 @@ section {
                 >img {
                     background-color: transparent;
                     transition: all 100ms ease-in-out;
-    
+
                     &:hover {
                         transform: scale(1.2);
                     }
@@ -140,6 +140,7 @@ section {
             text-wrap: nowrap;
             gap: 10px;
             margin-bottom: 40px;
+
             >p {
                 background-color: transparent;
             }

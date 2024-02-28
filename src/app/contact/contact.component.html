@@ -1,30 +1,35 @@
 <div id="contact"></div>
-<header>
+@if (isVisible) {
+<header @flyInLeft>
     <div></div>
     <h1>Contact</h1>
 </header>
+}
 <section>
     <div>
-        <span>
+        @if (isVisible) {
+        <span @flyInLeft>
             <h2>Got a problem to solve?</h2>
             <span>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing
                 to
                 your projects with my work.</span>
             <span>Need a Frontend developer? <b>Contact me!</b></span>
         </span>
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        }
+        @if (isVisible) {
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" @flyInRight>
             <label for="name">
                 <input #name="ngModel" [(ngModel)]="contactData.name"
-                [ngClass]="name.touched?{valid : name.valid, invalid : name.invalid} : {}"
-                    type="text" name="name" placeholder="Your name" required>
+                    [ngClass]="name.touched?{valid : name.valid, invalid : name.invalid} : {}" type="text" name="name"
+                    placeholder="Your name" required>
                 @if (!name.valid && name.touched) {
                 <p>Your name is required</p>
                 }
             </label>
             <label for="email">
                 <input #email="ngModel" [(ngModel)]="contactData.email"
-                [ngClass]="email.touched?{valid : email.valid, invalid : email.invalid} : {}"
-                    type="email" name="email" placeholder="Your email" required
+                    [ngClass]="email.touched?{valid : email.valid, invalid : email.invalid} : {}" type="email"
+                    name="email" placeholder="Your email" required
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                 @if (!email.valid && email.touched) {
                 <p>Your email is required</p>
@@ -32,18 +37,23 @@
             </label>
             <label for="message">
                 <textarea #message="ngModel" [(ngModel)]="contactData.message"
-                    [ngClass]="message.touched?{valid : message.valid, invalid : message.invalid} : {}"
-                    name="message" cols="30" rows="10" placeholder="Your message" required minlength="4"></textarea>
+                    [ngClass]="message.touched?{valid : message.valid, invalid : message.invalid} : {}" name="message"
+                    cols="30" rows="10" placeholder="Your message" required minlength="4"></textarea>
                 @if (!message.valid && message.touched) {
                 <p>Your message is too short</p>
                 }
             </label>
-            <label class="checkbox-container" (mouseenter)="checkBoxBackground = true" (mouseleave)="checkBoxBackground = false">
+            <label class="checkbox-container" (mouseenter)="checkBoxBackground = true"
+                (mouseleave)="checkBoxBackground = false">
                 @if (!checked) {
-                <img #checkBox (click)="toggleCheckBox()" [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}" src="assets/img/check-box-unchecked.png">
+                <img #checkBox (click)="toggleCheckBox()"
+                    [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}"
+                    src="assets/img/check-box-unchecked.png">
                 }
                 @else {
-                <img #checkBox (click)="toggleCheckBox()" [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}" src="assets/img/check-box-checked.png">
+                <img #checkBox (click)="toggleCheckBox()"
+                    [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}"
+                    src="assets/img/check-box-checked.png">
                 }
                 <span>I've read the
                     <a href="">privacy policy</a>
@@ -53,9 +63,11 @@
             <input [ngClass]="{enabled : checked && name.valid && email.valid && message.valid}" type="submit"
                 value="Send message :)" [disabled]="!(checked && name.valid && email.valid && message.valid)">
         </form>
-        <img src="assets/img/contact-shadow.png">
+        <img src="assets/img/contact-shadow.png" @flyInLeft>
+        }
     </div>
-    <a href="#" (mouseenter)="greenArrow = true" (mouseleave)="greenArrow = false">
+    @if (isVisible) {
+    <a href="#" (mouseenter)="greenArrow = true" (mouseleave)="greenArrow = false" @flyInRight>
         @if (greenArrow) {
         <img src="assets/img/arrow-up-green.png">
         }
@@ -63,4 +75,5 @@
         <img src="assets/img/arrow-up.png">
         }
     </a>
+    }
 </section>

@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProjectComponent } from './project/project.component';
+import { flyInLeft, flyInRight } from '../shared/animations';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [ProjectComponent],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+  styleUrl: './portfolio.component.scss',
+  animations: [flyInLeft, flyInRight]
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit {
 
   projects: {
     name: string;
@@ -34,4 +36,29 @@ export class PortfolioComponent {
         path: 'assets/img/el-pollo-loco.png'
       }
     ]
+
+  isVisible: boolean = false;
+
+  ngOnInit(): void {
+    this.createObserver();
+  }
+
+  createObserver() {
+    const callback = (entries: any) => {
+      entries &&
+        entries.forEach((entry: any) => {
+          if (entry.isIntersecting) {
+            this.isVisible = true;
+          }
+        });
+    };
+
+    const options = {
+      rootMargin: '0px 0px -300px 0px'
+    }
+
+    const observer = new IntersectionObserver(callback, options);
+    const target = document.getElementById('portfolio');
+    target && observer.observe(target);
+  }
 }

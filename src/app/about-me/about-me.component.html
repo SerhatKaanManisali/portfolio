@@ -1,6 +1,7 @@
 <div id="about-me"></div>
 <section>
-    <div class="info-container">
+    @if (isVisible) {
+    <div class="info-container" @flyInLeft>
         <h1>About me</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, error rem placeat nihil tempore tenetur
             saepe voluptate accusamus eveniet aperiam fuga nemo quo obcaecati debitis illum explicabo eius non cumque.
@@ -21,9 +22,12 @@
                 veniam!</p>
         </span>
     </div>
-    <div class="picture-container">
+    }
+    @if (isVisible) {
+    <div class="picture-container" @flyInRight>
         <img src="assets/img/about-me-portrait.png">
         <div></div>
     </div>
-    <img src="assets/img/about-me-shadow.png">
+    }
+    <img id="background-shadow" src="assets/img/about-me-shadow.png">
 </section>

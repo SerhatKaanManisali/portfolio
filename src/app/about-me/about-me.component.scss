@@ -3,6 +3,7 @@
 section {
     @include flex-box($jc: space-between);
     min-width: 100%;
+    min-height: 500px;
     position: relative;
 
     >img {
@@ -11,6 +12,7 @@ section {
         background-color: transparent;
         right: -450px;
         top: -300px;
+        opacity: 0;
     }
 }
 
@@ -67,5 +69,5 @@ section {
 }
 
 #about-me {
-    height: 100px;
+    height: 600px;
 }

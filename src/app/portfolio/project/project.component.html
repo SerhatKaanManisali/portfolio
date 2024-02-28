@@ -1,12 +1,12 @@
-<div class="project-container" [ngStyle]="{'margin-left' : even ? '5%' : '-5%'}">
-    @if (even) {
-        <img src="{{project.path}}">
-    }
-    <div [ngStyle]="{'align-items' : even ? 'flex-start' : 'flex-end', 'text-align' : even ? 'start' : 'end'}">
+<div id="project{{index}}" class="project-container" [ngStyle]="{'margin-left' : even ? '5%' : '-5%'}">
+    @if (even && isVisible) {
+    <img src="{{project.path}}" @flyInLeft>
+    <div [ngStyle]="{'align-items' : even ? 'flex-start' : 'flex-end', 'text-align' : even ? 'start' : 'end'}"
+        @flyInLeft>
         <h1>{{project.name}}</h1>
         <ul>
             @for (skill of project.skills; track $index) {
-                <li>{{skill}}</li>
+            <li>{{skill}}</li>
             }
         </ul>
         <p>{{project.description}}</p>
@@ -15,7 +15,25 @@
             <a href="{{project.gitHubLink}}" target="_blank">Github</a>
         </div>
     </div>
-    @if (!even) {
-        <img src="{{project.path}}">
+    }
+
+    <div id="placeholder"></div>
+
+    @if (!even && isVisible) {
+    <div [ngStyle]="{'align-items' : even ? 'flex-start' : 'flex-end', 'text-align' : even ? 'start' : 'end'}"
+        @flyInRight>
+        <h1>{{project.name}}</h1>
+        <ul>
+            @for (skill of project.skills; track $index) {
+            <li>{{skill}}</li>
+            }
+        </ul>
+        <p>{{project.description}}</p>
+        <div class="buttons">
+            <a href="{{project.testLink}}" target="_blank">Live test</a>
+            <a href="{{project.gitHubLink}}" target="_blank">Github</a>
+        </div>
+    </div>
+    <img src="{{project.path}}" @flyInRight>
     }
 </div>

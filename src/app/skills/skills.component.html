@@ -1,6 +1,7 @@
 <div id="skills"></div>
 <section>
-    <ul>
+    @if (isVisible) {
+    <ul @flyInLeft>
         @for (skill of skills; track $index) {
         <li>
             <img src="{{skill.path}}">
@@ -8,11 +9,14 @@
         </li>
         }
     </ul>
-    <span>
+    }
+    @if (isVisible) {
+    <span @flyInRight>
         <h1>My Skills</h1>
         <p>I have gained experience in building projects with various front end technologies and concepts.</p>
         <a href="#contact" class="primary-button">Get in touch</a>
     </span>
     <div class="line"></div>
+    }
     <img src="assets/img/skills-shadow.png">
 </section>

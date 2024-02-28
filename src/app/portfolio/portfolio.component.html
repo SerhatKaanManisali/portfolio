@@ -1,5 +1,6 @@
 <div id="portfolio"></div>
-<header>
+@if (isVisible) {
+<header @flyInRight>
     <span>
         <div></div>
         <h1>Portfolio</h1>
@@ -7,10 +8,11 @@
     </span>
     <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
 </header>
+}
 
 <section>
-    @for (project of projects; track projects; let even = $even;) {
-        <app-project [project]="project" [even]="even"></app-project>
+    @for (project of projects; track projects; let even = $even; let index = $index;) {
+    <app-project [project]="project" [even]="even" [index]="index" ></app-project>
     }
     <img src="assets/img/portfolio-shadow-right.png">
 </section>

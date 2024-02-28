@@ -4,10 +4,13 @@
     @include flex-box();
     gap: 10%;
     width: 100%;
+    background-color: transparent;
     
     >img {
         z-index: 1;
-        background-color: transparent
+        background-color: transparent;
+        width: 600px;
+        height: 600px;
     }
 
     >div {
@@ -67,4 +70,8 @@
             background-color: #70E61C;
         }
     }
+}
+
+#placeholder {
+    height: 600px;
 }
