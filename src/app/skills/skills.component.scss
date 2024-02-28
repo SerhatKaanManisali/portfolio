@@ -9,15 +9,13 @@ section {
     background-color: transparent;
 
     >ul {
-        @include flex-box();
+        padding-left: 0;
         z-index: 1;
         list-style: none;
-        flex-wrap: wrap;
         gap: 80px;
         text-align: center;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        margin-left: -5%;
         text-wrap: nowrap;
         width: 60%;
         background-color: transparent;
