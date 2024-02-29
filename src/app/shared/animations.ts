@@ -37,7 +37,7 @@ export const hover = trigger('hover', [
   state(
     'top',
     style({
-      transform: 'translateY(-10%)'
+      transform: 'translateY(-15%)'
     })
   ),
   state(
@@ -46,6 +46,6 @@ export const hover = trigger('hover', [
       transform: 'translateY(0%)'
     })
   ),
-  transition('top => bottom', [animate('0.5s ease-in-out')]),
-  transition('bottom => top', [animate('0.5s ease-in-out')])
+  transition('top => bottom', [animate('1s ease-in-out')]),
+  transition('bottom => top', [animate('1s ease-in-out')])
 ])

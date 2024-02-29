@@ -19,7 +19,12 @@
         </div>
         }
     </div>
+    @if (windowWidth > 1024) {
     <img src="assets/img/background-shape.png">
+    }
+    @else {
+    <img src="assets/img/background-shape-mobile.png">
+    }
 </section>
 <div class="end">
     @if (isVisible) {
@@ -29,11 +34,13 @@
         <a href="mailto:serhat.manisali.02@gmail.com"><img src="assets/img/email.png"></a>
         <a href="https://www.linkedin.com/in/serhat-kaan-manisali" target="_blank"><img
                 src="assets/img/linked-in.png"></a>
+        @if (windowWidth > 1024) {
         <a href="mailto:serhat.manisali.02@gmail.com" target="_blank">serhat.manisali.02&#64;gmail.com</a>
+        }
     </div>
     }
-    @if (isVisible) {
-    <div id="scroll-symbol" @flyInRight>
+    @if (isVisible && windowWidth > 768) {
+    <div #scrollSymbol @flyInRight [@hover]="hoverAnimation ? 'top' : 'bottom'">
         <p>Scroll down</p>
         <img src="assets/img/arrow-down.png">
     </div>

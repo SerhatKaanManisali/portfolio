@@ -41,6 +41,19 @@ body {
      overflow-x: hidden;
 }
 
+@media (max-width: 1300px) {
+     .side-padding {
+          padding: 0 2%;
+     }
+}
+
+@media (max-width: 568px) {
+     .primary-button {
+          padding: 10px 20px;
+          font-size: 20px;
+     }
+}
+
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
      height: 10px;

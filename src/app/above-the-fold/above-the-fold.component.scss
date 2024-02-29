@@ -16,7 +16,7 @@ section {
     >img {
         position: absolute;
         width: 100%;
-        top: 305px;
+        top: 32%;
         z-index: 1;
         background-color: transparent;
     }
@@ -120,10 +120,12 @@ section {
             >a {
                 background-color: transparent;
                 text-decoration: none;
+                height: 30px;
 
                 >img {
                     background-color: transparent;
                     transition: all 100ms ease-in-out;
+                    
 
                     &:hover {
                         transform: scale(1.2);
@@ -151,4 +153,270 @@ section {
             }
         }
     }
+}
+
+@media screen and (max-width: 1600px) {
+    section {
+        >img {
+            top: 42%;
+        }
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    section {
+        >img {
+            top: 47%;
+        }
+    }
+
+    .main-text {
+        h1 {
+            font-size: 50px !important;
+        }
+
+        h2 {
+            font-size: 52px !important;
+        }
+
+        h3 {
+            font-size: 54px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    section {
+        >img {
+            top: 52%;
+        }
+    }
+
+    .portrait-container {
+        height: 900px;
+
+        >img {
+            &:first-of-type {
+                top: 80px;
+                left: -150px;
+                height: 800px;
+                width: 850px;
+            }
+
+            &:last-of-type {
+                top: -130px;
+                height: 900px;
+            }
+        }
+    }
+
+    .end {
+        >div {
+            &:last-of-type {
+                margin-right: 2%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    section {
+        >img {
+            top: 57%;
+        }
+    }
+
+    .main-text {
+        h1 {
+            font-size: 43px !important;
+        }
+
+        h2 {
+            font-size: 44px !important;
+        }
+
+        h3 {
+            font-size: 46px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    section {
+        >div {
+            @include flex-box($jc: space-between, $ai: center);
+            flex-direction: column;
+        }
+
+        >img {
+            top: 54%;
+        }
+    }
+
+    .portrait-container {
+        @include flex-box($jc: center);
+        height: 350px;
+        width: fit-content;
+
+        >img {
+            &:first-of-type {
+                top: -43%;
+                left: -400px;
+                height: 700px;
+                width: 750px;
+            }
+
+            &:last-of-type {
+                top: -73%;
+                left: unset;
+                height: 600px;
+                width: 400px;
+            }
+        }
+    }
+
+    .main-text {
+        margin-top: unset;
+        gap: 20px;
+    }
+
+    .end {
+        padding: 0 2%;
+        >div {
+            &:first-of-type {
+                margin-bottom: 30px;
+                gap: 6%;
+                
+                >div {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        >img {
+            top: 57%;
+        }
+    }
+
+    .portrait-container {
+        >img {
+            &:first-of-type {
+                top: -35%;
+                left: -285px;
+                height: 500px;
+                width: 550px;
+            }
+        }
+    }
+
+    .end {
+        
+        >div {
+            &:first-of-type {
+                writing-mode: unset;
+                gap: 8%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 568px) {
+    section {
+        >img {
+            top: 61%;
+        }
+    }
+
+    .main-text {
+        h1 {
+            font-size: 35px !important;
+        }
+
+        h2 {
+            font-size: 36px !important;
+        }
+
+        h3 {
+            font-size: 38px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 475px){
+    section {
+        >img {
+            top: 64%;
+        }
+    }
+
+    .portrait-container {
+        >img {
+            &:last-of-type {
+                left: -188px;
+            }
+        }
+    }
+
+    .main-text {
+        h1 {
+            font-size: 27px !important;
+        }
+
+        h2 {
+            font-size: 28px !important;
+        }
+
+        h3 {
+            font-size: 30px !important;
+        }
+    }
+
+    .end {
+        margin-top: -230px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    section {
+        >img {
+            top: 66%;
+        }
+    }
+
+    .portrait-container {
+        >img {
+            &:first-of-type {
+                left: -200px;
+                top: -15%;
+                width: 390px;
+            }
+
+            &:last-of-type {
+                width: 350px;
+                height: auto;
+                left: -164px;
+                top: -54%;
+            }
+        }
+    }
+
+    .main-text {
+        margin-right: 10px;
+        h1 {
+            font-size: 23px !important;
+        }
+
+        h2 {
+            font-size: 24px !important;
+        }
+
+        h3 {
+            font-size: 26px !important;
+        }
+    }
+    
 }

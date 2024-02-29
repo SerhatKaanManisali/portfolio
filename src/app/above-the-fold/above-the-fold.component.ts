@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild} from '@angular/core';
-import { flyInLeft, flyInRight } from '../shared/animations';
+import { Component, ElementRef, OnInit, ViewChild, HostListener} from '@angular/core';
+import { flyInLeft, flyInRight, hover } from '../shared/animations';
 
 
 @Component({
@@ -9,12 +9,23 @@ import { flyInLeft, flyInRight } from '../shared/animations';
   imports: [CommonModule],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss',
-  animations: [flyInLeft, flyInRight]
+  animations: [flyInLeft, flyInRight, hover]
 })
-export class AboveTheFoldComponent {
+export class AboveTheFoldComponent implements OnInit {
 
   isVisible: boolean = true;
+  hoverAnimation: boolean = false;
+  windowWidth: number = window.innerWidth;
 
-  @ViewChild ('scroll-symbol') scrollSymbol!: ElementRef;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
+  }
+
+  @ViewChild ('scrollSymbol') scrollSymbol!: ElementRef;
+
+  ngOnInit(): void {
+    setInterval(() => {this.hoverAnimation = !this.hoverAnimation}, 1000)
+  }
 
 }
