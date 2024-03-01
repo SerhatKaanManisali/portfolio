@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,8 +11,27 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
   highlightedLinkIndex: number = 0;
+  chosenLanguege: string = 'DE';
+  menuActive = false;
+  windowWidth: number = window.innerWidth;
+
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
+    document.body.style.overflowY = this.menuActive ? 'hidden' : 'auto';
+  }
+
+  chooseLanguage(language: string) {
+    this.chosenLanguege = language;
+    console.log('Language chosen: ' + language);
+
+  }
 
   highlightLink(index: number) {
     this.highlightedLinkIndex = index;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
   }
 }
