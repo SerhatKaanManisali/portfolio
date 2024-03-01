@@ -11,7 +11,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class NavBarComponent {
   highlightedLinkIndex: number = 0;
-  chosenLanguege: string = 'DE';
+  chosenLanguege: string = 'EN';
   menuActive = false;
   windowWidth: number = window.innerWidth;
 
@@ -27,7 +27,11 @@ export class NavBarComponent {
   }
 
   highlightLink(index: number) {
-    this.highlightedLinkIndex = index;
+    if (this.windowWidth >= 769) {
+      this.highlightedLinkIndex = index;
+    } else {
+      this.toggleMenu();
+    }
   }
 
   @HostListener('window:resize', ['$event'])

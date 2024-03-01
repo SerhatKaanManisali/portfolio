@@ -1,22 +1,27 @@
 <div id="skills"></div>
 <section>
     @if (isVisible) {
-    <ul @flyInLeft>
-        @for (skill of skills; track $index) {
-        <li>
-            <img src="{{skill.path}}">
-            <p>{{skill.name}}</p>
-        </li>
+    @if (windowWidth <= 1024) {
+        <a href="#contact" class="primary-button" @flyInLeft>Get in touch</a>
         }
-    </ul>
-    }
-    @if (isVisible) {
-    <span @flyInRight>
-        <h1>My Skills</h1>
-        <p>I have gained experience in building projects with various front end technologies and concepts.</p>
-        <a href="#contact" class="primary-button">Get in touch</a>
-    </span>
-    <div class="line"></div>
-    }
-    <img src="assets/img/skills-shadow.png">
+        <ul @flyInLeft>
+            @for (skill of skills; track $index) {
+            <li>
+                <img src="{{skill.path}}">
+                <p>{{skill.name}}</p>
+            </li>
+            }
+        </ul>
+        }
+        @if (isVisible) {
+        <span class="info-container" @flyInRight>
+            <h1>My Skills</h1>
+            <p>I have gained experience in building projects with various front end technologies and concepts.</p>
+            @if (windowWidth > 1024) {
+            <a href="#contact" class="primary-button">Get in touch</a>
+            }
+        </span>
+        <div class="line"></div>
+        }
+        <img src="assets/img/skills-shadow.png">
 </section>

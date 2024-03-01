@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, Input, NgModule } from '@angular/core';
+import { AfterViewInit, Component, Input, HostListener } from '@angular/core';
 import { flyInLeft, flyInRight } from '../../shared/animations';
 
 
@@ -29,10 +29,16 @@ export class ProjectComponent implements AfterViewInit{
   @Input() even: boolean = true;
   @Input() index: number = 0;
   isVisible: boolean = false;
+  windowWidth: number = window.innerWidth;
   
 
   ngAfterViewInit(): void {
     this.createObserver()
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
   }
 
   createObserver() {

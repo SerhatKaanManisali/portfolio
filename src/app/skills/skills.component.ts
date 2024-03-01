@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { flyInLeft, flyInRight } from '../shared/animations';
 
 @Component({
@@ -23,7 +23,7 @@ export class SkillsComponent implements OnInit {
         path: 'assets/img/typescript.png'
       },
       {
-        name: 'Javascript',
+        name: 'JavaScript',
         path: 'assets/img/javascript.png'
       },
       {
@@ -57,9 +57,15 @@ export class SkillsComponent implements OnInit {
     ]
 
   isVisible: boolean = false;
+  windowWidth: number = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
+  }
+
 
   ngOnInit(): void {
-
     this.createObserver();
   }
 
