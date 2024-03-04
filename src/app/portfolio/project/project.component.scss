@@ -5,7 +5,7 @@
     gap: 10%;
     width: 100%;
     background-color: transparent;
-    
+
     >img {
         z-index: 1;
         background-color: transparent;
@@ -27,16 +27,21 @@
         >p {
             font-size: 16px;
             max-width: 90%;
+            z-index: 1;
+            background-color: transparent;
         }
 
         >ul {
             margin: 0;
             padding: 0;
+            z-index: 1;
+            background-color: transparent;
 
             >li {
                 list-style-type: none;
                 display: inline;
                 color: #70E61C;
+                background-color: transparent;
 
                 &:not(:first-child)::before {
                     content: " | ";
@@ -58,7 +63,7 @@
         transition: all 100ms ease-in-out;
         text-wrap: nowrap;
         z-index: 1;
-        
+
         &:first-of-type {
             background-color: #9747FF;
 
@@ -78,13 +83,13 @@
     height: 600px;
 }
 
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1150px) {
     .project-container {
         gap: 5%;
     }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     #placeholder {
         height: 10px;
     }
@@ -93,5 +98,23 @@
         >div {
             text-align: center;
         }
-    } 
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .project-container {
+        >img {
+            width: 345px;
+            height: 345px;
+        }
+    }
+
+    .buttons {
+        gap: 40px;
+
+        >a {
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+    }
 }

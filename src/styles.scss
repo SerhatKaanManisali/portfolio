@@ -59,32 +59,33 @@ body {
 *::-webkit-scrollbar {
      height: 10px;
      width: 10px;
-   }
-   *::-webkit-scrollbar-track {
+}
+
+*::-webkit-scrollbar-track {
      border-radius: 10px;
      background-color: #1F2A40;
-   }
-   
-   *::-webkit-scrollbar-track:hover {
+}
+
+*::-webkit-scrollbar-track:hover {
      background-color: #1F2A40;
-   }
-   
-   *::-webkit-scrollbar-track:active {
+}
+
+*::-webkit-scrollbar-track:active {
      background-color: #1F2A40;
-   }
-   
-   *::-webkit-scrollbar-thumb {
+}
+
+*::-webkit-scrollbar-thumb {
      border-radius: 10px;
      background-color: #7035BD;
-   }
-   
-   *::-webkit-scrollbar-thumb:hover {
+}
+
+*::-webkit-scrollbar-thumb:hover {
      background-color: #9747FF;
-   }
-   
-   *::-webkit-scrollbar-thumb:active {
+}
+
+*::-webkit-scrollbar-thumb:active {
      background-color: #9747FF;
-   }
+}
 
 /* poppins-100 - latin */
 @font-face {

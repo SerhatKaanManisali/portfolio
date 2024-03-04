@@ -28,7 +28,7 @@ header {
     }
 }
 
-section {
+.content {
     @include flex-box($ai: flex-end);
     @extend .side-padding;
     flex-direction: column;
@@ -56,42 +56,6 @@ section {
             }
         }
 
-        form {
-            @include flex-box($jc: flex-start);
-            flex-direction: column;
-            width: 50%;
-            gap: 32px;
-
-            >label {
-                @include flex-box($ai: flex-start);
-                flex-direction: column;
-                width: 100%;
-                gap: 10px;
-
-                >p {
-                    color: #E61C40;
-                    font-size: 14px
-                }
-
-                >input[type=text],
-                [type=email] {
-                    @extend .input-style;
-                }
-
-                >textarea {
-                    @extend .input-style;
-                    resize: none;
-                }
-            }
-
-            >input[type=submit] {
-                padding: 15px 30px;
-                border: unset;
-                border-radius: 10px;
-                background-color: #B6B6B6;
-            }
-        }
-
         >img {
             position: absolute;
             background-color: transparent;
@@ -99,6 +63,42 @@ section {
             bottom: 0;
             left: 0;
         }
+    }
+}
+
+form {
+    @include flex-box($jc: flex-start);
+    flex-direction: column;
+    width: 50%;
+    gap: 32px;
+
+    >label {
+        @include flex-box($ai: flex-start);
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+
+        >p {
+            color: #E61C40;
+            font-size: 14px
+        }
+
+        >input[type=text],
+        [type=email] {
+            @extend .input-style;
+        }
+
+        >textarea {
+            @extend .input-style;
+            resize: none;
+        }
+    }
+
+    >input[type=submit] {
+        padding: 15px 30px;
+        border: unset;
+        border-radius: 10px;
+        background-color: #B6B6B6;
     }
 }
 
@@ -119,7 +119,7 @@ section {
     background-image: url('../../assets/img/valid.png');
     background-repeat: no-repeat;
     background-position: (98% 13px);
-    
+
 }
 
 .invalid {
@@ -173,3 +173,5 @@ a {
 #contact {
     height: 400px;
 }
+
+@media screen and (max-width: 768px) {}
