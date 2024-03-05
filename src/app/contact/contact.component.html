@@ -44,13 +44,13 @@
                 (mouseleave)="checkBoxBackground = false">@if ( !checked) {
                 <img #checkBox (click)="toggleCheckBox()"
                     [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}"
-                    src="assets/img/check-box-unchecked.png">
+                    src="assets/img/check-box-unchecked.png" loading="lazy">
                 }
 
                 @else {
                 <img #checkBox (click)="toggleCheckBox()"
                     [ngStyle]="{'background-color' : checkBoxBackground ? '#183771' : 'transparent'}"
-                    src="assets/img/check-box-checked.png">
+                    src="assets/img/check-box-checked.png" loading="lazy">
                 }
 
                 <span>I've read the
@@ -58,16 +58,16 @@
                 </span></label><input [ngClass]="{enabled : checked && name.valid && email.valid && message.valid}"
                 type="submit" value="Send message :)"
                 [disabled]="!(checked && name.valid && email.valid && message.valid)"></form><img
-            src="assets/img/contact-shadow.png" @flyInLeft>
+            src="assets/img/contact-shadow.png" loading="lazy" @flyInLeft>
         }
 
     </div>@if (isVisible) {
     <a href="#" (mouseenter)="greenArrow = true" (mouseleave)="greenArrow = false" @flyInRight> @if (greenArrow) {
-        <img src="assets/img/arrow-up-green.png">
+        <img src="assets/img/arrow-up-green.png" loading="lazy">
         }
 
         @else {
-        <img src="assets/img/arrow-up.png">
+        <img src="assets/img/arrow-up.png" loading="lazy">
         }
 
     </a>

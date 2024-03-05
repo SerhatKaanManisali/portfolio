@@ -249,21 +249,21 @@ section {
         }
 
         >img {
-            top: 54%;
+            top: 50%;
         }
     }
 
     .portrait-container {
         @include flex-box($jc: center);
-        height: 37vh;
-        width: fit-content;
+        height: 35vh;
+
 
         >img {
             &:first-of-type {
                 top: -43%;
-                left: -400px;
+                left: unset;
                 height: auto;
-                width: 750px;
+                width: 650px;
             }
 
             &:last-of-type {
@@ -303,6 +303,8 @@ section {
     }
 
     .portrait-container {
+        width: fit-content;
+
         >img {
             &:first-of-type {
                 top: -35%;
@@ -354,8 +356,13 @@ section {
 
     .portrait-container {
         >img {
+            &:first-of-type {
+                left: -230px;
+                width: 450px;
+            }
+
             &:last-of-type {
-                left: -188px;
+                left: -168px;
             }
         }
     }

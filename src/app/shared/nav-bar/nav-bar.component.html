@@ -14,10 +14,8 @@
         </span>
     </span>
     }
-    @else if (windowWidth <= 768 && !menuActive) {
-    <div class="mobile-menu" (click)="toggleMenu()">&#9776;</div>
-    }
-    @if (windowWidth <= 768 && menuActive) {
-    <div class="mobile-menu" (click)="toggleMenu()">&#10005;</div>
-    }
+    @else if (windowWidth <= 768 && !menuActive) { <div class="mobile-menu" (click)="toggleMenu()">&#9776;</div>
+        }
+        @if (windowWidth <= 768 && menuActive) { <div class="mobile-menu" (click)="toggleMenu()">&#10005;</div>
+            }
 </nav>

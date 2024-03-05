@@ -2,7 +2,7 @@
     [ngStyle]="windowWidth > 1150 ? {'margin-left' : even ? '5%' : '-5%'} : {}"
     [ngStyle]="windowWidth <= 1024 ? {'flex-direction': even ? 'column' : 'column-reverse'} : {}">
     @if (even && isVisible) {
-    <img src="{{project.path}}" @flyInLeft>
+    <img src="{{project.path}}" loading="lazy" @flyInLeft>
     <div [ngStyle]="windowWidth > 1024 ? {'align-items' : even ? 'flex-start' : 'flex-end', 'text-align' : even ? 'start' : 'end'} : {'align-items': 'center'}"
         @flyInLeft>
         <h1>{{project.name}}</h1>
@@ -36,6 +36,6 @@
             <a href="{{project.gitHubLink}}" target="_blank">Github</a>
         </div>
     </div>
-    <img src="{{project.path}}" @flyInRight>
+    <img src="{{project.path}}" loading="lazy" @flyInRight>
     }
 </div>

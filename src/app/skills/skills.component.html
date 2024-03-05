@@ -1,13 +1,12 @@
 <div id="skills"></div>
 <section>
     @if (isVisible) {
-    @if (windowWidth <= 1024) {
-        <a href="#contact" class="primary-button" @flyInLeft>Get in touch</a>
+    @if (windowWidth <= 1024) { <a href="#contact" class="primary-button" @flyInLeft>Get in touch</a>
         }
         <ul @flyInLeft>
             @for (skill of skills; track $index) {
             <li>
-                <img src="{{skill.path}}">
+                <img src="{{skill.path}}" loading="lazy">
                 <p>{{skill.name}}</p>
             </li>
             }
@@ -23,5 +22,5 @@
         </span>
         <div class="line"></div>
         }
-        <img src="assets/img/skills-shadow.png">
+        <img src="assets/img/skills-shadow.png" loading="lazy">
 </section>
