@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild, HostListener} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
 import { flyInLeft, flyInRight, hover } from '../shared/animations';
 
 
@@ -22,10 +22,10 @@ export class AboveTheFoldComponent implements OnInit {
     this.windowWidth = event.target.innerWidth;
   }
 
-  @ViewChild ('scrollSymbol') scrollSymbol!: ElementRef;
+  @ViewChild('scrollSymbol') scrollSymbol!: ElementRef;
 
   ngOnInit(): void {
-    setInterval(() => {this.hoverAnimation = !this.hoverAnimation}, 1000)
+    setInterval(() => { this.hoverAnimation = !this.hoverAnimation }, 1000)
   }
 
 }

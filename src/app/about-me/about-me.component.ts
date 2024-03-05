@@ -10,7 +10,7 @@ import { flyInLeft, flyInRight } from '../shared/animations';
   styleUrl: './about-me.component.scss',
   animations: [flyInLeft, flyInRight]
 })
-export class AboutMeComponent implements OnInit{
+export class AboutMeComponent implements OnInit {
   isVisible: boolean = false;
   backgroundShadow: HTMLElement | null = null;
 
