@@ -13,9 +13,12 @@ header {
     @include flex-box($jc: flex-start);
     @extend .side-padding;
     width: 100%;
+    background-color: transparent;
 
     >h1 {
         font-size: 90px;
+        z-index: 1;
+        background-color: transparent;
     }
 
     >div {
@@ -28,17 +31,18 @@ header {
     }
 }
 
-.content {
+section {
     @include flex-box($ai: flex-end);
     @extend .side-padding;
     flex-direction: column;
     gap: 50px;
     position: relative;
     padding-bottom: 100px;
+    background-color: transparent;
 
     >div {
         @include flex-box($ai: flex-start, $jc: space-between);
-
+        background-color: transparent;
         margin-top: 100px;
 
         >span {
@@ -71,12 +75,15 @@ form {
     flex-direction: column;
     width: 50%;
     gap: 32px;
+    background-color: transparent;
+    z-index: 1;
 
     >label {
         @include flex-box($ai: flex-start);
         flex-direction: column;
         width: 100%;
         gap: 10px;
+        background-color: transparent;
 
         >p {
             color: #E61C40;
@@ -164,6 +171,7 @@ a {
     text-decoration: none;
     font-size: 16px;
     color: #9747FF;
+    background-color: transparent;
 
     &:hover {
         text-decoration: underline;
@@ -174,4 +182,55 @@ a {
     height: 400px;
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 1300px) {
+    header {
+        >h1 {
+            font-size: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    header {
+        >h1 {
+            font-size: 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        >h1 {
+            font-size: 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        >h1 {
+            font-size: 50px;
+        }
+    }
+
+    section {
+        >div {
+            flex-direction: column;
+            margin-top: 25px;
+            gap: 50px;
+
+            >span {
+                max-width: 100%;
+            }
+
+            >img {
+                bottom: -18%;
+                height: 500px;
+            }
+        }
+    }
+
+    form {
+        width: 100%;
+    }
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  windowWidth: number = window.innerWidth;
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
+  }
 }

@@ -1,6 +1,6 @@
 @import '../../../styles.scss';
 
-section {
+footer {
     @include flex-box($ai: flex-start);
     @extend .side-padding;
     flex-direction: column;
@@ -8,11 +8,12 @@ section {
     min-height: 200px;
     gap: 10px;
     padding-top: 25px;
+    z-index: 1;
+    position: relative;
 
     >div {
         @include flex-box($jc: space-between);
         width: 100%;
-
 
         >div {
             @include flex-box();
@@ -20,16 +21,28 @@ section {
 
             img {
                 transition: all 100ms ease-in-out;
-    
+
                 &:hover {
                     transform: scale(1.2);
                 }
             }
         }
     }
+}
 
-    >a {
-        text-decoration: none;
-        font-size: 16px;
+a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 58px 0;
+        text-align: center;
+
+        >div {
+            flex-direction: column;
+            gap: 58px;
+        }
     }
 }
