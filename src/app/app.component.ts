@@ -17,5 +17,18 @@ import { FooterComponent } from './shared/footer/footer.component';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  
+  constructor() {
+    this.disableLandscapeMode();
+  }
+
+  disableLandscapeMode() {
+    function checkOrientation() {
+      if (window.orientation === 90 || window.orientation === -90) {
+        alert('This website is not optimized for landscape mode. Please use portrait mode.');
+      }
+    }
+
+    window.addEventListener('orientationchange', checkOrientation);
+    window.addEventListener('load', checkOrientation);
+  }
 }

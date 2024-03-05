@@ -46,15 +46,6 @@ section {
     min-height: 50vh;
     position: relative;
     background-color: transparent;
-
-    >img {
-        &:last-of-type {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            background-color: transparent;
-        }
-    }
 }
 
 #portfolio {
