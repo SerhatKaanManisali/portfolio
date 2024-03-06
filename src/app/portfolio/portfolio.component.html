@@ -6,7 +6,10 @@
         <h1>Portfolio</h1>
         <div></div>
     </span>
-    <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+    @if (appComponent.chosenLanguege === 'EN') {
+    <p>Feel free to try out some of my projects.</p>
+    } @else {
+    <p>Probieren Sie gerne einige meiner Projekte aus.</p>}
 </header>
 }
 

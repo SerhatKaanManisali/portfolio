@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, HostListener, inject } from '@angular/core';
 import { flyInLeft, flyInRight, hover } from '../shared/animations';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -12,10 +13,38 @@ import { flyInLeft, flyInRight, hover } from '../shared/animations';
   animations: [flyInLeft, flyInRight, hover]
 })
 export class AboveTheFoldComponent implements OnInit {
-
+  appComponent: AppComponent = inject(AppComponent);
   isVisible: boolean = true;
   hoverAnimation: boolean = false;
   windowWidth: number = window.innerWidth;
+
+  EN: {
+    introduction: string;
+    name: string;
+    description: string;
+    button: string;
+    scroll: string;
+  } = {
+      introduction: 'I am',
+      name: 'Serhat Kaan Manisali',
+      description: 'FRONTEND DEVELOPER',
+      button: "Let's talk!",
+      scroll: 'Scroll down'
+    }
+
+  DE: {
+    introduction: string;
+    name: string;
+    description: string;
+    button: string;
+    scroll: string;
+  } = {
+      introduction: 'Ich bin',
+      name: 'Serhat Kaan Manisali',
+      description: 'FRONTEND ENTWICKLER',
+      button: 'Schreib mir!',
+      scroll: 'Runter scrollen'
+    }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

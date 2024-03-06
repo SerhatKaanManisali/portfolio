@@ -2,15 +2,19 @@
     <a href="#" (click)="highlightLink(0)"><img src="assets/img/name.png"></a>
     @if (windowWidth > 768 || menuActive) {
     <span>
-        <a href="#about-me" (click)="highlightLink(1)" [ngClass]="{'highlighted' : highlightedLinkIndex === 1}">About
-            me</a>
+        @if (appComponent.chosenLanguege === 'EN') {
+        <a href="#about-me" (click)="highlightLink(1)" [ngClass]="{'highlighted' : highlightedLinkIndex === 1}">About me</a>
         <a href="#skills" (click)="highlightLink(2)" [ngClass]="{'highlighted' : highlightedLinkIndex === 2}">Skills</a>
-        <a href="#portfolio" (click)="highlightLink(3)"
-            [ngClass]="{'highlighted' : highlightedLinkIndex === 3}">Portfolio</a>
+        <a href="#portfolio" (click)="highlightLink(3)" [ngClass]="{'highlighted' : highlightedLinkIndex === 3}">Portfolio</a>
+        } @else {
+        <a href="#about-me" (click)="highlightLink(1)" [ngClass]="{'highlighted' : highlightedLinkIndex === 1}">Über mich</a>
+        <a href="#skills" (click)="highlightLink(2)" [ngClass]="{'highlighted' : highlightedLinkIndex === 2}">Knowhow</a>
+        <a href="#portfolio" (click)="highlightLink(3)" [ngClass]="{'highlighted' : highlightedLinkIndex === 3}">Portfolio</a>
+        }
         <span>
-            <a (click)="chooseLanguage('EN')" [ngClass]="{'highlighted-languege' : chosenLanguege === 'EN'}">EN</a>
+            <a (click)="chooseLanguage('EN')" [ngClass]="{'highlighted-languege' : appComponent.chosenLanguege === 'EN'}">EN</a>
             |
-            <a (click)="chooseLanguage('DE')" [ngClass]="{'highlighted-languege' : chosenLanguege === 'DE'}">DE</a>
+            <a (click)="chooseLanguage('DE')" [ngClass]="{'highlighted-languege' : appComponent.chosenLanguege === 'DE'}">DE</a>
         </span>
     </span>
     }

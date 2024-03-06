@@ -1,14 +1,20 @@
 <footer>
     <div><a href="#"><img src="assets/img/name.png" loading="lazy"></a>
         <p>© Serhat Kaan Manisali 2024</p>
-        <div><a href="https://github.com/SerhatKaanManisali" target="_blank"><img src="assets/img/github.png"
-                    loading="lazy"></a><a href="mailto:serhat.manisali.02@gmail.com"><img src="assets/img/email.png"
-                    loading="lazy"></a><a href="https://www.linkedin.com/in/serhat-kaan-manisali/" target="_blank"><img
-                    src="assets/img/linked-in.png" loading="lazy"></a></div>@if (windowWidth <=768) { <a href="">
-            Imprint</a>
-            }
-
-    </div>@if (windowWidth > 768) {
+        <div>
+            <a href="https://github.com/SerhatKaanManisali" target="_blank"><img src="assets/img/github.png"
+                    loading="lazy"></a>
+            <a href="mailto:serhat.manisali.02@gmail.com"><img src="assets/img/email.png" loading="lazy"></a>
+            <a href="https://www.linkedin.com/in/serhat-kaan-manisali/" target="_blank"><img
+                    src="assets/img/linked-in.png" loading="lazy"></a>
+        </div>
+        @if (windowWidth <=768 && appComponent.chosenLanguege==='EN' ) { <a href="imprint">Imprint</a>
+            } @else if (windowWidth <=768 && appComponent.chosenLanguege==='DE' ) { <a href="imprint">Impressum</a>
+                }
+    </div>
+    @if (windowWidth > 768 && appComponent.chosenLanguege === 'EN') {
     <a href="imprint">Imprint</a>
+    } @else if (windowWidth > 768 && appComponent.chosenLanguege === 'DE') {
+    <a href="imprint">Impressum</a>
     }
 </footer>

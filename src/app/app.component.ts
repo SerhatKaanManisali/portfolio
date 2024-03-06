@@ -1,11 +1,13 @@
 
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
-
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,6 +15,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  chosenLanguege: string = 'EN';
+
   constructor() {
     this.disableLandscapeMode();
   }

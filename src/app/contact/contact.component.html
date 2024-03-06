@@ -4,17 +4,24 @@
 @if (isVisible) {
 <header @flyInLeft>
     <div></div>
-    <h1>Contact</h1>
+    @if (appComponent.chosenLanguege === 'EN') {
+    <h1>{{EN.title}}</h1>
+    } @else {
+    <h1>{{DE.title}}</h1>
+    }
 </header>
 }
 
 <section>
     <div>@if (isVisible) {
         <span @flyInLeft>
-            <h2>Got a problem to solve?</h2><span>Contact me through this form,
-                I am interested in hearing from you,
-                knowing your ideas and contributing to your projects with my work.</span><span>Need a Frontend
-                developer? <b>Contact me !</b></span>
+            @if (appComponent.chosenLanguege === 'EN') {
+            <h2>{{EN.subTitle}}</h2>
+            <span>{{EN.description}}</span><span>{{EN.description2}} <b>{{EN.callToAction}}</b></span>
+            } @else {
+            <h2>{{DE.subTitle}}</h2>
+            <span>{{DE.description}}</span><span>{{DE.description2}} <b>{{DE.callToAction}}</b></span>
+            }
         </span>
         }
 
@@ -22,22 +29,34 @@
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" @flyInRight> <label for="name"><input
                     #name="ngModel" [(ngModel)]="contactData.name"
                     [ngClass]="name.touched?{valid : name.valid, invalid : name.invalid} : {}" type="text" name="name"
-                    placeholder="Your name" required>@if ( !name.valid && name.touched) {
-                <p>Your name is required</p>
+                    placeholder="Name" required>@if ( !name.valid && name.touched) {
+                @if (appComponent.chosenLanguege === 'EN') {
+                <p>{{EN.nameValidation}}</p>
+                } @else {
+                <p>{{DE.nameValidation}}</p>
+                }
                 }
 
             </label><label for="email"><input #email="ngModel" [(ngModel)]="contactData.email"
                     [ngClass]="email.touched?{valid : email.valid, invalid : email.invalid} : {}" type="email"
-                    name="email" placeholder="Your email" required
+                    name="Email" placeholder="Your email" required
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">@if ( !email.valid && email.touched) {
-                <p>Your email is required</p>
+                @if (appComponent.chosenLanguege === 'EN') {
+                <p>{{EN.emailValidation}}</p>
+                } @else {
+                <p>{{DE.emailValidation}}</p>
+                }
                 }
 
             </label><label for="message"><textarea #message="ngModel" [(ngModel)]="contactData.message"
                     [ngClass]="message.touched?{valid : message.valid, invalid : message.invalid} : {}" name="message"
-                    cols="30" rows="10" placeholder="Your message" required minlength="4"></textarea>@if (
+                    cols="30" rows="10" placeholder="..." required minlength="4"></textarea>@if (
                 !message.valid && message.touched) {
-                <p>Your message is too short</p>
+                @if (appComponent.chosenLanguege === 'EN') {
+                <p>{{EN.messageValidation}}</p>
+                } @else {
+                <p>{{DE.messageValidation}}</p>
+                }
                 }
 
             </label><label class="checkbox-container" (mouseenter)="checkBoxBackground = true"
@@ -53,12 +72,29 @@
                     src="assets/img/check-box-checked.png" loading="lazy">
                 }
 
-                <span>I've read the
-                    <a href="">privacy policy</a>and agree to the processing of my data as outlined.
-                </span></label><input [ngClass]="{enabled : checked && name.valid && email.valid && message.valid}"
-                type="submit" value="Send message :)"
-                [disabled]="!(checked && name.valid && email.valid && message.valid)"></form><img
-            src="assets/img/contact-shadow.png" loading="lazy" @flyInLeft>
+                @if (appComponent.chosenLanguege === 'EN') {
+                <span>
+                    {{EN.beforePP}}
+                    <a href="">{{EN.privacyPolicy}}</a>
+                    {{EN.afterPP}}
+                </span>
+                } @else {
+                <span>
+                    {{DE.beforePP}}
+                    <a href="">{{DE.privacyPolicy}}</a>
+                    {{DE.afterPP}}
+                </span>
+                }
+            </label>
+            @if (appComponent.chosenLanguege === 'EN') {
+            <input [ngClass]="{enabled : checked && name.valid && email.valid && message.valid}" type="submit"
+                value="{{EN.button}}" [disabled]="!(checked && name.valid && email.valid && message.valid)">
+            } @else {
+            <input [ngClass]="{enabled : checked && name.valid && email.valid && message.valid}" type="submit"
+                value="{{DE.button}}" [disabled]="!(checked && name.valid && email.valid && message.valid)">
+            }
+        </form>
+        <img src="assets/img/contact-shadow.png" loading="lazy" @flyInLeft>
         }
 
     </div>@if (isVisible) {

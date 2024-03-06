@@ -1,26 +1,37 @@
 <div id="skills"></div>
 <section>
     @if (isVisible) {
-    @if (windowWidth <= 1024) { <a href="#contact" class="primary-button" @flyInLeft>Get in touch</a>
-        }
-        <ul @flyInLeft>
-            @for (skill of skills; track $index) {
-            <li>
-                <img src="{{skill.path}}" loading="lazy">
-                <p>{{skill.name}}</p>
-            </li>
+    @if (windowWidth <= 1024 && appComponent.chosenLanguege==='EN' ) { <a href="#contact" class="primary-button"
+        @flyInLeft>{{EN.button}}</a>
+        } @else if (windowWidth <= 1024 && appComponent.chosenLanguege==='DE' ) { <a href="#contact"
+            class="primary-button" @flyInLeft>{{DE.button}}</a>
             }
-        </ul>
-        }
-        @if (isVisible) {
-        <span class="info-container" @flyInRight>
-            <h1>My Skills</h1>
-            <p>I have gained experience in building projects with various front end technologies and concepts.</p>
-            @if (windowWidth > 1024) {
-            <a href="#contact" class="primary-button">Get in touch</a>
+            <ul @flyInLeft>
+                @for (skill of skills; track $index) {
+                <li>
+                    <img src="{{skill.path}}" loading="lazy">
+                    <p>{{skill.name}}</p>
+                </li>
+                }
+            </ul>
             }
-        </span>
-        <div class="line"></div>
-        }
-        <img src="assets/img/skills-shadow.png" loading="lazy">
+            @if (isVisible) {
+            <span class="info-container" @flyInRight>
+                @if (appComponent.chosenLanguege === 'EN') {
+                <h1>{{EN.title}}</h1>
+                <p>T{{EN.description}}</p>
+                @if (windowWidth > 1024) {
+                <a href="#contact" class="primary-button">{{EN.button}}</a>
+                }
+                } @else {
+                <h1>{{DE.title}}</h1>
+                <p>{{DE.description}}</p>
+                @if (windowWidth > 1024) {
+                <a href="#contact" class="primary-button">{{DE.button}}</a>
+                }
+                }
+            </span>
+            <div class="line"></div>
+            }
+            <img src="assets/img/skills-shadow.png" loading="lazy">
 </section>

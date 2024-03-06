@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
+import { AppComponent } from '../../app.component';
 
 
 @Component({
@@ -10,8 +11,8 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
+  appComponent: AppComponent = inject(AppComponent);
   highlightedLinkIndex: number = 0;
-  chosenLanguege: string = 'EN';
   menuActive = false;
   windowWidth: number = window.innerWidth;
 
@@ -21,9 +22,7 @@ export class NavBarComponent {
   }
 
   chooseLanguage(language: string) {
-    this.chosenLanguege = language;
-    console.log('Language chosen: ' + language);
-
+    this.appComponent.chosenLanguege = language;
   }
 
   highlightLink(index: number) {

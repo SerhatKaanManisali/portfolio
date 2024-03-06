@@ -6,16 +6,27 @@
             <img src="assets/img/above-the-fold-portrait.webp">
         </div>
         }
-        @if (isVisible) {
+        @if (isVisible && appComponent.chosenLanguege === 'EN') {
         <div class="main-text" @flyInRight>
             <span>
-                <h3>I am</h3>
+                <h3>{{EN.introduction}}</h3>
                 <span>
-                    <h1>Serhat Kaan Manisali</h1>
-                    <h2>FRONTEND DEVELOPER</h2>
+                    <h1>{{EN.name}}</h1>
+                    <h2>{{EN.description}}</h2>
                 </span>
             </span>
-            <a href="#contact" class="primary-button">Let's talk!</a>
+            <a href="#contact" class="primary-button">{{EN.button}}</a>
+        </div>
+        } @else {
+        <div class="main-text" @flyInRight>
+            <span>
+                <h3>{{DE.introduction}}</h3>
+                <span>
+                    <h1>{{DE.name}}</h1>
+                    <h2>{{DE.description}}</h2>
+                </span>
+            </span>
+            <a href="#contact" class="primary-button">{{DE.button}}</a>
         </div>
         }
     </div>
@@ -41,7 +52,11 @@
     }
     @if (isVisible && windowWidth > 768) {
     <div #scrollSymbol @flyInRight [@hover]="hoverAnimation ? 'top' : 'bottom'">
-        <p>Scroll down</p>
+        @if (appComponent.chosenLanguege === 'EN') {
+        <p>{{EN.scroll}}</p>
+        } @else {
+        <p>{{DE.scroll}}</p>
+        }
         <img src="assets/img/arrow-down.png">
     </div>
     }

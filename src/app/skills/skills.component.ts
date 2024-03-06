@@ -1,5 +1,6 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, inject } from '@angular/core';
 import { flyInLeft, flyInRight } from '../shared/animations';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-skills',
@@ -10,6 +11,8 @@ import { flyInLeft, flyInRight } from '../shared/animations';
   animations: [flyInLeft, flyInRight]
 })
 export class SkillsComponent implements OnInit {
+  appComponent: AppComponent = inject(AppComponent);
+
   skills: {
     name: string;
     path: string;
@@ -19,7 +22,7 @@ export class SkillsComponent implements OnInit {
         path: 'assets/img/angular.png'
       },
       {
-        name: 'Typescript',
+        name: 'TypeScript',
         path: 'assets/img/typescript.png'
       },
       {
@@ -55,6 +58,18 @@ export class SkillsComponent implements OnInit {
         path: 'assets/img/material-design.png'
       }
     ]
+
+  EN = {
+    title: 'My Skills',
+    description: 'Through dedicated practice, I have developed several fundamental skills in frontend development.',
+    button: 'Get in touch'
+  }
+
+  DE = {
+    title: 'Knowhow',
+    description: 'Durch engagierte Üben habe ich einige fundamentale Fähigkeiten in der Frontend Entwicklung entwickelt.',
+    button: 'Kontakt aufnehmen'
+  }
 
   isVisible: boolean = false;
   windowWidth: number = window.innerWidth;

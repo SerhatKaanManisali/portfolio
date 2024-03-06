@@ -1,6 +1,3 @@
-$primaryColor: #9747FF;
-$secondaryColor: #70E61C;
-
 @mixin flex-box($jc: center, $ai: center) {
      display: flex;
      justify-content: $jc;
@@ -40,6 +37,7 @@ $secondaryColor: #70E61C;
 
 body {
      overflow-x: hidden;
+     max-width: 1920px;
 }
 
 @media (max-width: 1300px) {

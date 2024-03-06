@@ -11,7 +11,11 @@
             <li>{{skill}}</li>
             }
         </ul>
-        <p>{{project.description}}</p>
+        @if (appComponent.chosenLanguege === 'EN') {
+        <p>{{project.descriptionEn}}</p>
+        } @else {
+        <p>{{project.descriptionDe}}</p>
+        }
         <div class="buttons">
             <a href="{{project.testLink}}" target="_blank">Live test</a>
             <a href="{{project.gitHubLink}}" target="_blank">Github</a>
@@ -30,7 +34,11 @@
             <li>{{skill}}</li>
             }
         </ul>
-        <p>{{project.description}}</p>
+        @if (appComponent.chosenLanguege === 'EN') {
+        <p>{{project.descriptionEn}}</p>
+        } @else {
+        <p>{{project.descriptionDe}}</p>
+        }
         <div class="buttons">
             <a href="{{project.testLink}}" target="_blank">Live test</a>
             <a href="{{project.gitHubLink}}" target="_blank">Github</a>

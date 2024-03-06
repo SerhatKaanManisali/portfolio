@@ -1,6 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, Input, HostListener } from '@angular/core';
-import { flyInLeft, flyInRight } from '../../shared/animations';
+import {
+  CommonModule
+}
+
+  from '@angular/common';
+
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  HostListener,
+  inject
+}
+
+  from '@angular/core';
+
+import {
+  flyInLeft,
+  flyInRight
+}
+
+  from '../../shared/animations';
+import { AppComponent } from '../../app.component';
 
 
 @Component({
@@ -10,46 +30,57 @@ import { flyInLeft, flyInRight } from '../../shared/animations';
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss',
   animations: [flyInLeft, flyInRight]
-})
-export class ProjectComponent implements AfterViewInit{
+}
+
+) export class ProjectComponent implements AfterViewInit {
+  appComponent: AppComponent = inject(AppComponent);
+
   @Input() project: {
     name: string;
     skills: string[];
-    description: string;
-    testLink: string; gitHubLink: string;
+    descriptionEn: string;
+    descriptionDe: string;
+    testLink: string;
+    gitHubLink: string;
     path: string;
-  } = {
+  }
+
+    = {
       name: 'Join',
       skills: ['Javascript', 'CSS', 'HTML'],
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quam illum libero saepe sed corporis cum, molestias ipsam ab voluptatibus eius quibusdam soluta id magni aliquid necessitatibus voluptatum facere repellendus.',
+      descriptionEn: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quam illum libero saepe sed corporis cum, molestias ipsam ab voluptatibus eius quibusdam soluta id magni aliquid necessitatibus voluptatum facere repellendus.',
+      descriptionDe: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quam illum libero saepe sed corporis cum, molestias ipsam ab voluptatibus eius quibusdam soluta id magni aliquid necessitatibus voluptatum facere repellendus.',
       testLink: '',
       gitHubLink: 'https://github.com/SerhatKaanManisali/join',
       path: '../../../assets/img/join.png'
     }
+
   @Input() even: boolean = true;
   @Input() index: number = 0;
+
   isVisible: boolean = false;
   windowWidth: number = window.innerWidth;
-  
 
   ngAfterViewInit(): void {
     this.createObserver()
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  @HostListener('window:resize', ['$event']) onResize(event: any) {
     this.windowWidth = event.target.innerWidth;
   }
 
   createObserver() {
     const callback = (entries: any) => {
-      entries &&
-        entries.forEach((entry: any) => {
-          if (entry.isIntersecting) {
-            this.isVisible = true;
-          }
-        });
-    };
+      entries && entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
+          this.isVisible = true;
+        }
+      }
+
+      );
+    }
+
+      ;
 
     const options = {
       rootMargin: '0px 0px -300px 0px'

@@ -59,7 +59,7 @@ section {
         background-color: transparent;
 
         >span {
-            display: flex;
+            @include flex-box();
             flex-direction: column;
             text-wrap: nowrap;
             background-color: transparent;
@@ -67,7 +67,6 @@ section {
             >h1 {
                 font-size: 58px;
                 background-color: transparent;
-
             }
 
             >h2 {

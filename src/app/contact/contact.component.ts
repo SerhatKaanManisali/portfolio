@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { flyInLeft, flyInRight } from '../shared/animations';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-contact',
@@ -13,12 +14,68 @@ import { flyInLeft, flyInRight } from '../shared/animations';
   animations: [flyInLeft, flyInRight]
 })
 export class ContactComponent implements OnInit {
-
+  appComponent: AppComponent = inject(AppComponent);
   http = inject(HttpClient);
 
   checked: boolean = false;
   greenArrow: boolean = false;
   checkBoxBackground: boolean = false;
+
+  EN: {
+    title: string;
+    subTitle: string;
+    description: string;
+    description2: string;
+    callToAction: string;
+    nameValidation: string;
+    emailValidation: string;
+    messageValidation: string;
+    beforePP: string;
+    privacyPolicy: string;
+    afterPP: string;
+    button: string;
+  } = {
+      title: 'Contact',
+      subTitle: 'Got a problem to solve?',
+      description: 'Contact me through this form. I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.',
+      description2: 'Need a frontend developer?',
+      callToAction: 'Contact me!',
+      nameValidation: 'Your name is required.',
+      emailValidation: 'Your email is required.',
+      messageValidation: 'Your message is too short.',
+      beforePP: 'I have read the',
+      privacyPolicy: 'privacy policy',
+      afterPP: 'and agree to the processing of my data as outlined.',
+      button: 'Send message :)'
+    }
+
+  DE: {
+    title: string;
+    subTitle: string;
+    description: string;
+    description2: string;
+    callToAction: string;
+    nameValidation: string;
+    emailValidation: string;
+    messageValidation: string;
+    beforePP: string;
+    privacyPolicy: string;
+    afterPP: string;
+    button: string;
+  } = {
+      title: 'Kontakt',
+      subTitle: 'Gibt es ein Problem zu lösen?',
+      description: 'Kontaktieren Sie mich über dieses Formular. Ich bin gespannt auf Ihre Ideen und möchte mit meiner Arbeit zu Ihren Projekten beitragen.',
+      description2: 'Brauchen Sie einen Frontend Entwickler?',
+      callToAction: 'Kontaktieren Sie mich!',
+      nameValidation: 'Ihr Name ist erforderlich.',
+      emailValidation: 'Ihre Email ist erforderlich',
+      messageValidation: 'Ihre Nachricht ist zu kurz.',
+      beforePP: 'Ich habe die',
+      privacyPolicy: 'Datenschutzerklärung',
+      afterPP: 'gelesen und stimme der Verarbeitung meiner Daten wie angegeben zu.',
+      button: 'Nachricht senden :)'
+    }
 
   contactData: {
     name: string;
