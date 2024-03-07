@@ -87,10 +87,8 @@ export class ContactComponent implements OnInit {
       message: ''
     }
 
-  mailTest = true;
-
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://serhat-kaan-manisali.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -127,11 +125,10 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {
@@ -139,9 +136,6 @@ export class ContactComponent implements OnInit {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
     }
   }
 
