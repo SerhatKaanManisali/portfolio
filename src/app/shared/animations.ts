@@ -49,3 +49,18 @@ export const hover = trigger('hover', [
   transition('top => bottom', [animate('1s ease-in-out')]),
   transition('bottom => top', [animate('1s ease-in-out')])
 ])
+
+export const fadeInOut = trigger('fadeInOut', [
+  state('closed',
+    style({
+      opacity: 0
+    })
+  ),
+  state('in',
+    style({
+      opacity: 1
+    })
+  ),
+  transition('void => *', [style({ opacity: 0}), animate('0.5s ease-in-out')]),
+  transition('* => void', [animate('0.5s ease-in-out'), style({ opacity: 0}),]),
+])

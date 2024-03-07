@@ -93,6 +93,9 @@
             <input [ngClass]="{enabled : checked && name.valid && email.valid && message.valid}" type="submit"
                 value="{{DE.button}}" [disabled]="!(checked && name.valid && email.valid && message.valid)">
             }
+            @if (messageSent) {
+                <span @fadeInOut>Thank you for your message. I will get back to you soon.</span>
+            }
         </form>
         <img src="assets/img/contact-shadow.png" loading="lazy" @flyInLeft>
         }

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { flyInLeft, flyInRight } from '../shared/animations';
+import { fadeInOut, flyInLeft, flyInRight } from '../shared/animations';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -11,7 +11,7 @@ import { AppComponent } from '../app.component';
   imports: [FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
-  animations: [flyInLeft, flyInRight]
+  animations: [flyInLeft, flyInRight, fadeInOut]
 })
 export class ContactComponent implements OnInit {
   appComponent: AppComponent = inject(AppComponent);
@@ -87,6 +87,8 @@ export class ContactComponent implements OnInit {
       message: ''
     }
 
+    messageSent: boolean = false;
+
   post = {
     endPoint: 'https://serhat-kaan-manisali.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -134,9 +136,14 @@ export class ContactComponent implements OnInit {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => this.messageConfirmation(),
         });
     }
+  }
+
+  messageConfirmation() {
+    this.messageSent = true;
+    setTimeout(() => this.messageSent = false, 3000);
   }
 
   toggleCheckBox() {
