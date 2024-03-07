@@ -27,7 +27,7 @@ export class PortfolioComponent implements OnInit {
         skills: ['Javascript', 'CSS', 'HTML'],
         descriptionEn: 'Kanban-based task management application that allows users to create, edit, and delete tasks easily, providing better control over their workload. ',
         descriptionDe: 'Kanban-basierte Aufgabenverwaltungsanwendung, die es den Benutzern ermöglicht, auf einfache Weise Aufgaben zu erstellen, zu bearbeiten und zu löschen, um so eine bessere Kontrolle über ihr Arbeitspensum zu erhalten.',
-        testLink: '',
+        testLink: 'https://join.serhat-kaan-manisali.com',
         gitHubLink: 'https://github.com/SerhatKaanManisali/join',
         path: 'assets/img/join.png'
       },
@@ -36,7 +36,7 @@ export class PortfolioComponent implements OnInit {
         skills: ['Javascript', 'OOP', 'CSS', 'HTML'],
         descriptionEn: 'Jump and run game in which you play Pepe and have to face your dreaded enemy El Pollo Loco. Throwing salsa bottles at him can defeat him. But be careful. Do not approach him too closely, or he will show you why he is so feared.',
         descriptionDe: 'Jump and Run Spiel, in dem du Pepe spielst und dich deinem gefürchteten Feind El Pollo Loco stellen musst. Du kannst ihn besiegen, indem du Salsaflaschen auf ihn wirfst. Aber sei vorsichtig. Komm ihm nicht zu nahe, sonst wird er dir zeigen, warum er so gefürchtet ist.',
-        testLink: '',
+        testLink: 'https://el-pollo-loco.serhat-kaan-manisali.com',
         gitHubLink: 'https://github.com/SerhatKaanManisali/el-pollo-loco',
         path: 'assets/img/el-pollo-loco.png'
       }
