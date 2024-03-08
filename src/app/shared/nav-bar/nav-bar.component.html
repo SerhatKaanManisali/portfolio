@@ -18,8 +18,8 @@
         </span>
     </span>
     }
-    @else if (windowWidth <= 768 && !menuActive) { <div class="mobile-menu" (click)="toggleMenu(4)">&#9776;</div>
+    @else if (windowWidth <= 768 && !menuActive) { <div class="mobile-menu" (click)="toggleMenu()">&#9776;</div>
         }
-        @if (windowWidth <= 768 && menuActive) { <div class="mobile-menu" (click)="toggleMenu(4)">&#10005;</div>
+        @if (windowWidth <= 768 && menuActive) { <div class="mobile-menu" (click)="toggleMenu()">&#10005;</div>
             }
 </nav>

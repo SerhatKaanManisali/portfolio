@@ -132,6 +132,7 @@ export class ContactComponent implements OnInit {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.toggleCheckBox();
           },
           error: (error) => {
             console.error(error);

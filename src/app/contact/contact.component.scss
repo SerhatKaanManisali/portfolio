@@ -64,8 +64,8 @@ section {
             position: absolute;
             background-color: transparent;
             right: calc(33% - 400px);
-            bottom: 0;
-            left: 0;
+            bottom: -150px;
+            left: -150px;
         }
     }
 }
@@ -160,6 +160,11 @@ form {
         cursor: pointer;
         z-index: 1;
     }
+}
+
+.scroll-up {
+    position: absolute;
+    bottom: 20px;
 }
 
 span {

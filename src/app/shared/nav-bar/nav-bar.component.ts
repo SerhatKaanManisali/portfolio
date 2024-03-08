@@ -16,14 +16,8 @@ export class NavBarComponent {
   menuActive = false;
   windowWidth: number = window.innerWidth;
 
-  toggleMenu(index: number) {
-    if (!this.menuActive && index !== 0) {
-      this.menuActive = !this.menuActive;
-      document.body.style.overflowY = this.menuActive ? 'hidden' : 'auto';
-    } else if (this.menuActive && index === 0) {
-      this.menuActive = !this.menuActive;
-      document.body.style.overflowY = this.menuActive ? 'hidden' : 'auto';
-    }
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
   }
 
   chooseLanguage(language: string) {
@@ -34,7 +28,7 @@ export class NavBarComponent {
     if (this.windowWidth >= 769) {
       this.highlightedLinkIndex = index;
     } else {
-      this.toggleMenu(index);
+      this.toggleMenu();
     }
   }
 

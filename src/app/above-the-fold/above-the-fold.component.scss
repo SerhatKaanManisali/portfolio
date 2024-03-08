@@ -35,6 +35,7 @@ section {
             left: -200px;
             top: 150px;
             height: 100%;
+            max-width: 99vw;
         }
 
         &:last-of-type {
@@ -356,12 +357,13 @@ section {
     .portrait-container {
         >img {
             &:first-of-type {
-                left: -230px;
-                width: 450px;
+                left: -200px;
+                width: 380px;
             }
 
             &:last-of-type {
-                left: -168px;
+                left: -175px;
+                height: 62vh;
             }
         }
     }
@@ -389,9 +391,9 @@ section {
     .portrait-container {
         >img {
             &:first-of-type {
-                left: -200px;
+                left: -170px;
                 top: -15%;
-                width: 390px;
+                width: 350px;
             }
 
             &:last-of-type {
