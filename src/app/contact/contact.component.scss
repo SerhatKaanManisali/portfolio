@@ -23,10 +23,10 @@ header {
 
     >div {
         position: absolute;
-        left: 0;
+        left: 590px;
         background-color: #9747FF;
         height: 4px;
-        width: calc((33% - 450px));
+        width: 200px;
         border-radius: 10px;
     }
 }
@@ -190,6 +190,17 @@ a {
 
 #contact {
     height: 400px;
+}
+
+@media screen and (min-width: 1921px){
+    section {
+        >div {
+            >img {
+                left: 0;
+            }
+        }
+    
+    }
 }
 
 @media screen and (max-width: 1300px) {
