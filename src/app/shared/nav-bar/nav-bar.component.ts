@@ -18,7 +18,12 @@ export class NavBarComponent {
 
   toggleMenu() {
     this.menuActive = !this.menuActive;
-  }
+    if (this.menuActive) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+}
 
   chooseLanguage(language: string) {
     this.appComponent.chosenLanguege = language;
