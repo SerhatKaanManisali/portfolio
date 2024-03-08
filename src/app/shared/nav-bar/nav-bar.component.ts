@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { AppComponent } from '../../app.component';
 
 
@@ -10,7 +10,7 @@ import { AppComponent } from '../../app.component';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   appComponent: AppComponent = inject(AppComponent);
   highlightedLinkIndex: number = 0;
   menuActive = false;
@@ -25,8 +25,14 @@ export class NavBarComponent {
     }
 }
 
+  ngOnInit() {
+    this.appComponent.chosenLanguege = localStorage.getItem('chosenLanguage') ?? '';
+  }
+
   chooseLanguage(language: string) {
     this.appComponent.chosenLanguege = language;
+    window.location.reload();
+    localStorage.setItem('chosenLanguage', language);
   }
 
   highlightLink(index: number) {
