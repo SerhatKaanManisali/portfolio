@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
 }
 
   ngOnInit() {
-    this.appComponent.chosenLanguege = localStorage.getItem('chosenLanguage') ?? '';
+    this.appComponent.chosenLanguege = localStorage.getItem('chosenLanguage') ?? 'DE';
   }
 
   chooseLanguage(language: string) {
