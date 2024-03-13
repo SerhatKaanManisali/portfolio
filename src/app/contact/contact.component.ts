@@ -25,8 +25,6 @@ export class ContactComponent implements OnInit {
     title: string;
     subTitle: string;
     description: string;
-    description2: string;
-    callToAction: string;
     nameValidation: string;
     emailValidation: string;
     messageValidation: string;
@@ -36,25 +34,21 @@ export class ContactComponent implements OnInit {
     button: string;
   } = {
       title: 'Contact',
-      subTitle: 'Got a problem to solve?',
-      description: 'Contact me through this form. I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.',
-      description2: 'Need a frontend developer?',
-      callToAction: 'Contact me!',
+      subTitle: 'Need help with your project?',
+      description: 'You are welcome to send me a message. I am curious about your ideas and look forward to working with you on exciting projects.',
       nameValidation: 'Your name is required.',
       emailValidation: 'Your email is required.',
       messageValidation: 'Your message is too short.',
       beforePP: 'I have read the',
       privacyPolicy: 'privacy policy',
       afterPP: 'and agree to the processing of my data as outlined.',
-      button: 'Send message :)'
+      button: 'Send'
     }
 
   DE: {
     title: string;
     subTitle: string;
     description: string;
-    description2: string;
-    callToAction: string;
     nameValidation: string;
     emailValidation: string;
     messageValidation: string;
@@ -64,17 +58,15 @@ export class ContactComponent implements OnInit {
     button: string;
   } = {
       title: 'Kontakt',
-      subTitle: 'Gibt es ein Problem zu lösen?',
-      description: 'Kontaktieren Sie mich über dieses Formular. Ich bin gespannt auf Ihre Ideen und möchte mit meiner Arbeit zu Ihren Projekten beitragen.',
-      description2: 'Brauchen Sie einen Frontend Entwickler?',
-      callToAction: 'Kontaktieren Sie mich!',
+      subTitle: 'Benötigen Sie Unterstützung bei Ihrem Projekt?',
+      description: 'Senden Sie mir gerne eine Nachricht. Ich bin neugierig auf Ihre Ideen und freue mich mit Ihnen an spannenden Projekten zu arbeiten.',
       nameValidation: 'Ihr Name ist erforderlich.',
       emailValidation: 'Ihre Email ist erforderlich',
       messageValidation: 'Ihre Nachricht ist zu kurz.',
       beforePP: 'Ich habe die',
       privacyPolicy: 'Datenschutzerklärung',
       afterPP: 'gelesen und stimme der Verarbeitung meiner Daten wie angegeben zu.',
-      button: 'Nachricht senden :)'
+      button: 'Senden'
     }
 
   contactData: {

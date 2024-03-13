@@ -42,7 +42,7 @@ export class AboveTheFoldComponent implements OnInit {
       introduction: 'Ich bin',
       name: 'Serhat Kaan Manisali',
       description: 'FRONTEND ENTWICKLER',
-      button: 'Schreib mir!',
+      button: 'Kontakt',
       scroll: 'Runter scrollen'
     }
 

@@ -26,6 +26,7 @@ section {
             >img {
                 transition: all 100ms ease-in-out;
                 background-color: transparent;
+                height: 60px;
 
                 &:hover {
                     transform: translateY(-20px);
@@ -127,10 +128,6 @@ a {
         >ul {
             gap: 80px;
             width: 100%;
-
-            >li:nth-child(9) {
-                grid-column-start: 2;
-            }
         }
 
         >div {
@@ -160,14 +157,6 @@ a {
         >ul {
             grid-template-columns: repeat(3, 1fr);
             gap: 50px;
-
-            >li:nth-child(9) {
-                grid-column-start: auto;
-            }
-
-            >li:nth-child(10) {
-                grid-column-start: 2;
-            }
         }
 
         >div {

@@ -56,19 +56,27 @@ export class SkillsComponent implements OnInit {
       {
         name: 'Material Design',
         path: 'assets/img/material-design.png'
+      },
+      {
+        name: 'Bootstrap',
+        path: 'assets/img/bootstrap.png'
+      },
+      {
+        name: 'SCSS',
+        path: 'assets/img/sass.png'
       }
     ]
 
   EN = {
     title: 'My Skills',
-    description: 'Through dedicated practice, I have developed several fundamental skills in frontend development.',
+    description: 'By developing several web applications I have acquired the following skills.',
     button: 'Get in touch'
   }
 
   DE = {
     title: 'Knowhow',
-    description: 'Durch engagierte Üben habe ich einige fundamentale Fähigkeiten in der Frontend Entwicklung entwickelt.',
-    button: 'Kontakt aufnehmen'
+    description: 'Durch die Entwicklung verschiedener Projekte, habe ich mir folgende Skills angeeignet.',
+    button: 'Kontakt'
   }
 
   isVisible: boolean = false;
@@ -78,7 +86,6 @@ export class SkillsComponent implements OnInit {
   onResize(event: any) {
     this.windowWidth = event.target.innerWidth;
   }
-
 
   ngOnInit(): void {
     this.createObserver();

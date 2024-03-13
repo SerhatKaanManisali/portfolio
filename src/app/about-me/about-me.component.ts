@@ -23,9 +23,9 @@ export class AboutMeComponent implements OnInit {
     paragraph3: string;
   } = {
       title: "About Me",
-      paragraph1: "I am an enthusiastic frontend developer and have been interested in information technology since my school days. At the Developer Akademie, I was able to pursue my passion and acquire knowledge in front-end development by developing various projects.",
-      paragraph2: "I have gained experience in fundamental web technologies, as well as in Angular, through developing web applications both independently and in a team. I am always eager to learn new technologies and improve my skills.",
-      paragraph3: "During development, I always strive for clear communication and clean code. After all, both aspects are essential for smooth teamwork. My problem-solving skills, combined with a focus on user-friendly and intuitive interfaces, round out my projects.",
+      paragraph1: "I am a Junior Frontend Developer with experience in building JavaScript and Angular web applications. After completing school, I joined the Developer Academy to pursue my interest in web development.",
+      paragraph2: "Due to my ability to comprehend things quickly, I learnt many web development methods within a few months and applied them across various projects.",
+      paragraph3: "During group projects, I gained experience in communication and collaboration with other team members. I was particularly keen to direct the team's focus to high priority topics.",
     }
 
   DE: {
@@ -35,9 +35,9 @@ export class AboutMeComponent implements OnInit {
     paragraph3: string;
   } = {
       title: "Über mich",
-      paragraph1: "Ich bin ein begeisterter Frontend Entwickler und interessiere mich schon seit meiner Schulzeit für Informationstechnologie. Bei der Developer Akademie konnte ich meiner Leidenschaft nachgehen und durch die Entwicklung verschiedener Projekte Kenntnisse in der Frontend-Entwicklung aneignen.",
-      paragraph2: "Ich habe Erfahrung in grundlegenden Webtechnologien sowie in Angular durch die selbstständige und im Team durchgeführte Entwicklung von Webanwendungen gesammelt. Ich bin immer bestrebt, neue Technologien zu erlernen und meine Fähigkeiten zu verbessern.",
-      paragraph3: "Bei der Entwicklung lege ich großen Wert auf klare Kommunikation und sauberen Code. Schließlich sind beide Aspekte für eine reibungslose Teamarbeit essenziell. Meine Problemlösungskompetenz, kombiniert mit einem Fokus auf benutzerfreundliche und intuitive Schnittstellen, runden meine Projekte ab.",
+      paragraph1: "Ich bin Junior Frontend Developer mit Projekterfahrung in JavaScript und Angular. Nach meinem Schulabschluss entschied ich mich für die Weiterbildung an der Developer Akademie, um meinem Interesse an Webentwicklung nachzugehen.",
+      paragraph2: "Durch meine schnelle Auffassungsgabe habe ich dort innerhalb weniger Monate viele Methoden der Webentwicklung erlernt und diese in verschiedenen Webapplikationen eingesetzt.",
+      paragraph3: "In Gruppenprojekten konnte ich Erfahrung bezüglich der Kommunikation und Zusammenarbeit mit anderen Teammitgliedern sammeln. Hierbei habe ich besonderen Wert darauf gelegt, den Fokus des Teams auf die wichtigsten Themen zu lenken.",
     }
 
   ngOnInit(): void {

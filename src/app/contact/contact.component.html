@@ -16,10 +16,10 @@
         <span @flyInLeft>
             @if (appComponent.chosenLanguege === 'EN') {
             <h2>{{EN.subTitle}}</h2>
-            <span>{{EN.description}}</span><span>{{EN.description2}} <b>{{EN.callToAction}}</b></span>
+            <span>{{EN.description}}</span>
             } @else {
             <h2>{{DE.subTitle}}</h2>
-            <span>{{DE.description}}</span><span>{{DE.description2}} <b>{{DE.callToAction}}</b></span>
+            <span>{{DE.description}}</span>
             }
         </span>
         }
@@ -38,7 +38,7 @@
 
             </label><label for="email"><input #email="ngModel" [(ngModel)]="contactData.email"
                     [ngClass]="email.touched?{valid : email.valid, invalid : email.invalid} : {}" type="email"
-                    name="Email" placeholder="Your email" required
+                    name="email" placeholder="Email" required
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">@if ( !email.valid && email.touched) {
                 @if (appComponent.chosenLanguege === 'EN') {
                 <p>{{EN.emailValidation}}</p>
