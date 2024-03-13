@@ -19,11 +19,11 @@ export class NavBarComponent implements OnInit {
   toggleMenu() {
     this.menuActive = !this.menuActive;
     if (this.menuActive) {
-        document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
     } else {
-        document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'auto';
     }
-}
+  }
 
   ngOnInit() {
     this.appComponent.chosenLanguege = localStorage.getItem('chosenLanguage') ?? 'DE';

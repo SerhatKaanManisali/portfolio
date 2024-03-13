@@ -1,7 +1,7 @@
 <nav>
     <a href="#" (click)="highlightLink(0)"><img src="assets/img/name.png"></a>
     @if (windowWidth > 768 || menuActive) {
-    <span>
+    <span (click)="toggleMenu()">
         @if (appComponent.chosenLanguege === 'EN') {
         <a href="#about-me" (click)="highlightLink(1)" [ngClass]="{'highlighted' : highlightedLinkIndex === 1}">About me</a>
         <a href="#skills" (click)="highlightLink(2)" [ngClass]="{'highlighted' : highlightedLinkIndex === 2}">Skills</a>
