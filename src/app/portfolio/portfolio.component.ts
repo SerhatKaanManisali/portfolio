@@ -25,8 +25,8 @@ export class PortfolioComponent implements OnInit {
       {
         name: 'Join',
         skills: ['Javascript', 'CSS', 'HTML', 'Git'],
-        descriptionEn: 'Task management web app using the Kanban principle to organise multiple users.',
-        descriptionDe: 'Task Management Web-App nach dem Kanban-Prinzip zur Organisation mehrerer Anwender.',
+        descriptionEn: 'Kanban-based task management application that allows users to create, edit, and delete tasks, providing a better overview of the workload.',
+        descriptionDe: 'Kanban-basierte Anwendung zur Aufgabenverwaltung, die es den Benutzern ermöglicht, Aufgaben zu erstellen, zu bearbeiten und zu löschen, um so einen besseren Überblick über das Arbeitspensum zu erhalten.',
         testLink: 'https://join.serhat-kaan-manisali.com',
         gitHubLink: 'https://github.com/SerhatKaanManisali/join',
         path: 'assets/img/join.png'
@@ -34,11 +34,20 @@ export class PortfolioComponent implements OnInit {
       {
         name: 'El Pollo Loco',
         skills: ['Javascript', 'CSS', 'HTML', 'Git'],
-        descriptionEn: 'Jump & run web browser game developed utilizing object-oriented programming.',
-        descriptionDe: 'Jump and Run Webbrowser Spiel, entwickelt mittels objektorientierter Programmierung.',
+        descriptionEn: "Jump and run game in which you play Pepe and face your dreaded enemy El Pollo Loco. You can defeat him by throwing salsa bottles at him. But be careful! Don't get near him, else he will show you why he is so feared.",
+        descriptionDe: 'Ein Jump-and-Run-Spiel, in dem Sie Pepe spielen und sich seinem gefürchteten Feind El Pollo Loco stellen. Sie können ihn besiegen, indem Sie Salsaflaschen auf ihn werfen. Aber vorsicht! Kommen Sie ihm nicht zu nahe, sonst wird er Ihnen zeigen, warum er so gefürchtet ist.',
         testLink: 'https://el-pollo-loco.serhat-kaan-manisali.com',
         gitHubLink: 'https://github.com/SerhatKaanManisali/el-pollo-loco',
         path: 'assets/img/el-pollo-loco.png'
+      },
+      {
+        name: 'Simple CRM',
+        skills: ['Angular', 'TypeScript', 'SCSS', 'HTML', 'Git', 'Angular Material', 'Firebase'],
+        descriptionEn: "A simple tool for managing customer relationships.",
+        descriptionDe: 'Ein simples Tool zur Verwaltung von Kundenbeziehungen.',
+        testLink: 'https://simple-crm.serhat-kaan-manisali.com',
+        gitHubLink: 'https://github.com/SerhatKaanManisali/simple-crm',
+        path: 'assets/img/crm.png'
       }
     ]
 
