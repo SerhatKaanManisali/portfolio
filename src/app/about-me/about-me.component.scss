@@ -78,7 +78,7 @@ section {
     height: 600px;
 }
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1300px) {
     .info-container {
         max-width: 55%;
 
@@ -89,7 +89,7 @@ section {
 
     .picture-container {
         width: 40%;
-        
+
         >img {
             max-width: 400px;
         }

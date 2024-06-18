@@ -23,8 +23,8 @@ export class AboutMeComponent implements OnInit {
     paragraph3: string;
   } = {
       title: "About Me",
-      paragraph1: "Hi, I am Serhat, 21 years old and as a Junior Frontend Developer I have experience in developing web applications with JavaScript and Angular.",
-      paragraph2: "In my web applications, I focus particularly on a smooth user experience and intuitive usability.",
+      paragraph1: "Hi, I am Serhat, 21 years old and Junior Frontend Developer. After successfully completing more than 10 projects at Developer Academy, I have gained extensive experience in developing web applications using JavaScript and Angular.",
+      paragraph2: "In my responsive web applications, I focus particularly on a smooth user experience and intuitive usability. Regardless of whether with or without CSS frameworks such as Material Design and Bootstrap.",
       paragraph3: "Group projects have taught me the importance of clean code and clear communication.",
     }
 
@@ -35,8 +35,8 @@ export class AboutMeComponent implements OnInit {
     paragraph3: string;
   } = {
       title: "Über mich",
-      paragraph1: "Hi, ich bin Serhat, 21 Jahre alt und als Junior Frontend Developer verfüge ich über Erfahrung im Entwickeln von Webanwendungen mit JavaScript und Angular.",
-      paragraph2: "In meinen Webapplikationen lege ich besonders viel Wert auf hohe Benutzerfreundlichkeit und intuitive Bedienbarkeit.",
+      paragraph1: "Hi, ich bin Serhat, 21 Jahre alt und Junior Frontend Entwickler. Nach mehr als 10 erfolgreich abgeschlossenen Projekten bei der Developer Akademie habe ich umfangreiche Erfahrung in der Entwicklung von Webanwendungen mit JavaScript und Angular gesammelt.",
+      paragraph2: "In meinen responsiven Webapplikationen lege ich besonders viel Wert auf hohe Benutzerfreundlichkeit und intuitive Bedienbarkeit. Ganz gleich, ob mit oder ohne CSS-Frameworks wie Material Design und Bootstrap.",
       paragraph3: "Durch Gruppenprojekte habe ich die Wichtigkeit von sauberem Code und einer klarer Kommunikation gelernt.",
     }
 
