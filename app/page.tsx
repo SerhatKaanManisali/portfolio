@@ -1,9 +1,8 @@
-import { GridBackground } from "@/components/grid-background";
 import Hero from "@/components/hero";
 
 export default function Home() {
   return (
-    <main>
+    <main className="mx-auto bg-black-100 flex flex-col justify-center items-center">
       <Hero />
     </main>
   );

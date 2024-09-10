@@ -4,6 +4,10 @@
 
 @layer base {
     * {
-        @apply box-border m-0
+        @apply box-border m-0;
+    }
+
+    body {
+        @apply overflow-x-hidden;
     }
 }
