@@ -1,8 +1,12 @@
+"use client";
+
 import React from "react";
+import { CardContainer, CardItem } from "./ui/3d-card";
 import Image from "next/image";
 import { Highlight } from "./ui/hero-hightlight";
 import MagicButton from "./magic-button";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { BackgroundGradient } from "./ui/background-gradient";
 
 const Hero = () => {
     return (
@@ -12,22 +16,26 @@ const Hero = () => {
                 <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/>
             </div>
 
-            <div className="absolute flex flex-col items-center justify-center gap-8">
+            <BackgroundGradient animate className="w-[338px] h-[601px] flex items-center justify-center">
+                    <CardContainer className="absolute flex flex-col items-center justify-center gap-8 px-2 pb-8 border border-gray-900 rounded-3xl bg-bg-gradient">
 
-                <div className="flex justify-center items-center rounded-full h-[22rem] w-[22rem] overflow-hidden border border-white">
-                    <Image src="/hero-image.png" alt="Hero image" width={250} height={250} priority />
-                </div>
+                        <CardItem translateZ={75} className="flex justify-center items-center w-80">
+                            <Image src="/hero-image.webp" alt="Hero image" width={250} height={250} priority />
+                        </CardItem>
 
-                <div className="text-center flex flex-col gap-3 w-full">
-                    <h1 className="text-3xl font-bold tracking-widest">Serhat Kaan Manisali</h1>
-                    <Highlight className="text-3xl font-semibold tracking-wider">Frontend Developer</Highlight>
-                </div>
+                        <CardItem translateZ={75} className="flex flex-col items-center gap-8">
+                            <CardItem className="text-center flex flex-col gap-3 w-full">
+                                <h1 className="text-2xl font-bold tracking-wider">Serhat Kaan Manisali</h1>
+                                <Highlight className="text-2xl font-semibold tracking-wider">Frontend Developer</Highlight>
+                            </CardItem>
 
-                <a href="mailto:mail@serhat-kaan-manisali.com" className="w-full">
-                    <MagicButton title="Hit me up" icon={<HiArrowUpRight />}/>
-                </a>
+                            <CardItem href="mailto:mail@serhat-kaan-manisali.com" className="w-full" as="a">
+                                <MagicButton title="Hit me up" icon={<HiArrowUpRight />} />
+                            </CardItem>
+                        </CardItem>
 
-            </div>
+                    </CardContainer>
+            </BackgroundGradient>
 
         </section>
     );
