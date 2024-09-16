@@ -1,42 +1,84 @@
 "use client";
 
-import React from "react";
-import { CardContainer, CardItem } from "./ui/3d-card";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Highlight } from "./ui/hero-hightlight";
 import MagicButton from "./magic-button";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { BackgroundGradient } from "./ui/background-gradient";
+import { FlipWords } from "./ui/flip-words";
+import ReactCardFlip from "react-card-flip";
+import { FaCaretDown, FaUserCheck } from "react-icons/fa6";
+import { BiSolidTachometer } from "react-icons/bi";
 
 const Hero = () => {
+    const [isDesktop, setIsDesktop] = useState(false);
+    const [isFlipped, setIsFlipped] = useState(false);
+    const flipWords = ["Frontend", "Angular", "React"];
+    const handleFlip = () => setIsFlipped(!isFlipped);
+    useEffect(() => {
+        const checkScreenWidth = () => setIsDesktop(window.innerWidth >= 1024);
+        checkScreenWidth();
+        window.addEventListener("resize", checkScreenWidth);
+        return () => window.removeEventListener("resize", checkScreenWidth);
+    }, []);
+
     return (
-        <section className="h-screen w-full flex flex-col items-center justify-center">
-            
+        <section className="h-screen w-full flex items-center justify-center">
+
             <div className="h-screen w-full bg-black-100 bg-grid-white/[0.1] absolute top-0 left-0 flex items-center justify-center">
-                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/>
+                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
             </div>
 
-            <BackgroundGradient animate className="w-[338px] h-[601px] flex items-center justify-center">
-                    <CardContainer className="absolute flex flex-col items-center justify-center gap-8 px-2 pb-8 border border-gray-900 rounded-3xl bg-bg-gradient">
+            <div className="absolute flex flex-col items-center justify-evenly w-full max-w-screen-xl gap-4 md:flex-row">
 
-                        <CardItem translateZ={75} className="flex justify-center items-center w-80">
-                            <Image src="/hero-image.webp" alt="Hero image" width={250} height={250} priority />
-                        </CardItem>
+                <BackgroundGradient>
+                    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+                        <div className="flex justify-center items-center w-80 h-80 rounded-full overflow-hidden bg-bg-gradient lg:w-[26rem] lg:h-[26rem]" onClick={isDesktop ? undefined : handleFlip} onMouseEnter={isDesktop ? handleFlip : undefined}>
+                            <Image src="/hero-image.webp" alt="Hero image" width={isDesktop ? 300 : 250} height={isDesktop ? 300 : 250} priority />
 
-                        <CardItem translateZ={75} className="flex flex-col items-center gap-8">
-                            <CardItem className="text-center flex flex-col gap-3 w-full">
-                                <h1 className="text-2xl font-bold tracking-wider">Serhat Kaan Manisali</h1>
-                                <Highlight className="text-2xl font-semibold tracking-wider">Frontend Developer</Highlight>
-                            </CardItem>
+                        </div>
 
-                            <CardItem href="mailto:mail@serhat-kaan-manisali.com" className="w-full" as="a">
-                                <MagicButton title="Hit me up" icon={<HiArrowUpRight />} />
-                            </CardItem>
-                        </CardItem>
+                        <div className="flex flex-col justify-center items-center w-80 h-80 rounded-full bg-bg-gradient text-center text-2xl gap-1 lg:text-3xl lg:w-[26rem] lg:h-[26rem]" onClick={isDesktop ? undefined : handleFlip} onMouseLeave={isDesktop ? handleFlip : undefined}>
+                            <div className="flex flex-col gap-1">
+                                I develop
 
-                    </CardContainer>
-            </BackgroundGradient>
+                                <div className="flex justify-center items-center gap-1">
+                                    efficient <BiSolidTachometer className="mt-2 w-6 h-auto" />
+                                </div>
 
+                                and
+
+                                <div className="flex justify-center items-center gap-1">
+                                    user-friendly <FaUserCheck className="mt-2 w-6 h-auto" />
+                                </div>
+
+                                websites using
+                            </div>
+
+                            <p>
+                                <b className="text-[#BD002E]">Angular</b> & <b className="text-[#5ED3F3]">React</b>
+                            </p>
+                        </div>
+                    </ReactCardFlip>
+                </BackgroundGradient>
+
+                <div className="flex flex-col items-center gap-4 md:gap-6 xl:gap-8">
+                    <h1 className="text-3xl font-bold tracking-wider text-[#CBACF9] md:text-4xl lg:text-5xl">Serhat Kaan Manisali</h1>
+
+                    <Highlight className="text-3xl font-semibold tracking-wider text-center w-full md:text-4xl lg:text-5xl">
+                        <FlipWords words={flipWords} />
+                        Developer
+                    </Highlight>
+
+                    <a href="mailto:mail@serhat-kaan-manisali.com" className="w-full lg:max-w-fit">
+                        <MagicButton title="Hit me up" icon={<HiArrowUpRight />} />
+                    </a>
+                </div>
+
+            </div>
+
+            <FaCaretDown className="absolute bottom-0 size-7 animate-bounce" />
         </section>
     );
 }

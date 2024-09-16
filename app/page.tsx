@@ -4,7 +4,7 @@ import { navItems } from "@/lib/data";
 
 export default function Home() {
     return (
-        <main className="mx-auto bg-black-100 flex flex-col justify-center items-center">
+        <main className="bg-black-100 flex flex-col justify-center items-center w-full">
             <FloatingNav navItems={navItems} />
             <Hero />
         </main>
