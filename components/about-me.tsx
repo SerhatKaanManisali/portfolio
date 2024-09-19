@@ -3,7 +3,13 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 const AboutMe = () => {
     return (
-        <section className="h-screen w-full px-4" id="about-me">
+        <section className="flex flex-col items-center gap-6 w-full px-4" id="about-me">
+            
+            <h1 className="flex gap-3 font-bold text-3xl md:text-5xl">
+                <p>About</p>
+                <p className="text-[#CBACF9]">Me</p>
+            </h1>
+
             <BentoGrid>
                 {gridItems.map((item, i) => (
                     <BentoGridItem
@@ -18,6 +24,7 @@ const AboutMe = () => {
                     />
                 ))}
             </BentoGrid>
+
         </section>
     );
 };
@@ -28,7 +35,7 @@ const gridItems = [
         title: "User Friendly",
         description: "Focus on creating smooth and intuitive user experience.",
         className: "md:col-span-3 md:row-span-2",
-        image: "/bento-grid-image-0.png",
+        image: "/bento-images/bento-grid-image-0.png",
         spareImage: "/grid.png",
     },
     {
@@ -37,23 +44,23 @@ const gridItems = [
         textClassName: "w-full left-0 items-center text-center",
         className: "md:col-span-2 md:row-span-2",
         description: "Experienced in developing web applications with Angular and React, having built over 10 projects.",
-        spareImage: "/grid.png",
+        spareImage: "/bento-images/grid.png",
     },
     {
         id: 2,
         title: "Responsive Design",
         textClassName: "items-center text-center w-full left-0",
         className: "md:col-span-2 md:row-span-2",
-        image: "/bento-grid-image-2.png",
-        spareImage: "/grid.png",
+        image: "/bento-images/bento-grid-image-2.png",
+        spareImage: "bento-images/grid.png",
     },
     {
         id: 3,
         title: "Clean Code",
-        description: "Place great emphasis on clean code.",
+        description: "Place great emphasis on clean and readable code.",
         className: "md:col-span-3 md:row-span-2",
-        image: "/bento-grid-image-3.png",
-        spareImage: "/grid.png",
+        image: "/bento-images/bento-grid-image-3.png",
+        spareImage: "/bento-images/grid.png",
     },
     
 ];
