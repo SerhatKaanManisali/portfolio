@@ -4,10 +4,10 @@
 
 @layer base {
     * {
-        @apply box-border m-0;
+        @apply box-border m-0 !scroll-smooth;
     }
 
     body {
-        @apply overflow-x-hidden mx-auto max-w-screen-xl;
+        @apply overflow-x-hidden bg-black-100;
     }
 }

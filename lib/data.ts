@@ -1,7 +1,7 @@
 export const navItems = [
     {
         name: "Home",
-        link: "/",
+        link: "#hero",
     },
     {
         name: "About Me",
@@ -15,4 +15,4 @@ export const navItems = [
         name: "Portfolio",
         link: "/#portfolio",
     }
-]
+];

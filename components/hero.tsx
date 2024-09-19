@@ -7,9 +7,7 @@ import MagicButton from "./magic-button";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { FlipWords } from "./ui/flip-words";
-import ReactCardFlip from "react-card-flip";
 import { FaCaretDown, FaUserCheck } from "react-icons/fa6";
-import { BiSolidTachometer } from "react-icons/bi";
 
 const Hero = () => {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -24,43 +22,19 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="h-screen w-full flex items-center justify-center">
+        <section className="h-screen w-full flex items-center justify-center max-md:mt-10" id="hero">
 
             <div className="h-screen w-full bg-black-100 bg-grid-white/[0.1] absolute top-0 left-0 flex items-center justify-center">
-                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_1%,black)]" />
             </div>
 
-            <div className="absolute flex flex-col items-center justify-evenly w-full max-w-screen-xl gap-4 md:flex-row">
+            <div className="absolute flex flex-col items-center justify-between w-full max-w-screen-xl px-4 md:flex-row">
 
                 <BackgroundGradient>
-                    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-                        <div className="flex justify-center items-center w-80 h-80 rounded-full overflow-hidden bg-bg-gradient lg:w-[26rem] lg:h-[26rem]" onClick={isDesktop ? undefined : handleFlip} onMouseEnter={isDesktop ? handleFlip : undefined}>
-                            <Image src="/hero-image.webp" alt="Hero image" width={isDesktop ? 300 : 250} height={isDesktop ? 300 : 250} priority />
+                    <div className="flex justify-center items-center w-80 h-80 rounded-full overflow-hidden bg-bg-gradient lg:w-[26rem] lg:h-[26rem]" onClick={isDesktop ? undefined : handleFlip} onMouseEnter={isDesktop ? handleFlip : undefined}>
+                        <Image src="/hero-image.webp" alt="Hero image" width={isDesktop ? 350 : 250} height={isDesktop ? 350 : 250} priority className="w-5/6 h-auto" />
 
-                        </div>
-
-                        <div className="flex flex-col justify-center items-center w-80 h-80 rounded-full bg-bg-gradient text-center text-2xl gap-1 lg:text-3xl lg:w-[26rem] lg:h-[26rem]" onClick={isDesktop ? undefined : handleFlip} onMouseLeave={isDesktop ? handleFlip : undefined}>
-                            <div className="flex flex-col gap-1">
-                                I develop
-
-                                <div className="flex justify-center items-center gap-1">
-                                    efficient <BiSolidTachometer className="mt-2 w-6 h-auto" />
-                                </div>
-
-                                and
-
-                                <div className="flex justify-center items-center gap-1">
-                                    user-friendly <FaUserCheck className="mt-2 w-6 h-auto" />
-                                </div>
-
-                                websites using
-                            </div>
-
-                            <p>
-                                <b className="text-[#BD002E]">Angular</b> & <b className="text-[#5ED3F3]">React</b>
-                            </p>
-                        </div>
-                    </ReactCardFlip>
+                    </div>
                 </BackgroundGradient>
 
                 <div className="flex flex-col items-center gap-4 md:gap-6 xl:gap-8">
@@ -81,6 +55,6 @@ const Hero = () => {
             <FaCaretDown className="absolute bottom-0 size-7 animate-bounce" />
         </section>
     );
-}
+};
 
-export default Hero
+export default Hero;

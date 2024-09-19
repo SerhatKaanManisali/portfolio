@@ -25,7 +25,7 @@ const config: Config = {
                 }
             },
             backgroundImage: {
-                "bg-gradient": "linear-gradient(103.4deg, #04071D 16.66%, #0C0E23 81.61%)"
+                "bg-gradient": "linear-gradient(103.4deg, #04071D 16.66%, #0C0E23 81.61%)", 
             }
         },
     },
