@@ -1,5 +1,6 @@
 import AboutMe from "@/components/about-me";
 import Hero from "@/components/hero";
+import Portfolio from "@/components/portfolio";
 import TechStack from "@/components/tech-stack";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/lib/data";
@@ -11,6 +12,7 @@ export default function Home() {
             <Hero />
             <AboutMe />
             <TechStack />
+            <Portfolio />
         </main>
     );
 }

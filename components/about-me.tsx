@@ -1,11 +1,12 @@
 import React from "react"
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
+
 const AboutMe = () => {
     return (
         <section className="flex flex-col items-center gap-6 w-full px-4" id="about-me">
-            
-            <h1 className="flex gap-3 font-bold text-3xl md:text-5xl">
+
+            <h1 className="flex gap-2 md:gap-3 font-bold text-3xl md:text-5xl">
                 <p>About</p>
                 <p className="text-[#CBACF9]">Me</p>
             </h1>
@@ -49,7 +50,7 @@ const gridItems = [
     {
         id: 2,
         title: "Responsive Design",
-        textClassName: "items-center text-center w-full left-0",
+        textClassName: "items-center text-center w-full left-0 ",
         className: "md:col-span-2 md:row-span-2",
         image: "/bento-images/bento-grid-image-2.png",
         spareImage: "bento-images/grid.png",
@@ -62,7 +63,6 @@ const gridItems = [
         image: "/bento-images/bento-grid-image-3.png",
         spareImage: "/bento-images/grid.png",
     },
-    
 ];
 
 export default AboutMe;

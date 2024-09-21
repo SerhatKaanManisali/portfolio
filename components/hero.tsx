@@ -7,7 +7,7 @@ import MagicButton from "./magic-button";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { FlipWords } from "./ui/flip-words";
-import { FaCaretDown, FaUserCheck } from "react-icons/fa6";
+import { FaCaretDown } from "react-icons/fa6";
 
 const Hero = () => {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -22,9 +22,9 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="h-screen w-full flex items-center justify-center max-md:mt-10" id="hero">
+        <section className="h-screen max-h-[1080px] w-full flex items-center justify-center max-md:pt-10 relative" id="hero">
 
-            <div className="h-screen w-full bg-black-100 bg-grid-white/[0.1] absolute top-0 left-0 flex items-center justify-center">
+            <div className="h-full max-h-[1080px] w-full bg-black-100 bg-grid-white/[0.05] absolute top-0 left-0 flex items-center justify-center">
                 <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_1%,black)]" />
             </div>
 
@@ -49,7 +49,6 @@ const Hero = () => {
                         <MagicButton title="Hit me up" icon={<HiArrowUpRight />} />
                     </a>
                 </div>
-
             </div>
 
             <FaCaretDown className="absolute bottom-0 size-7 animate-bounce" />
