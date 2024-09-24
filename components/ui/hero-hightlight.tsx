@@ -76,9 +76,9 @@ export const Highlight = ({
                 backgroundSize: "100% 100%",
             }}
             transition={{
-                duration: 0.5,
+                duration: 0.75,
                 ease: "linear",
-                delay: 0.5,
+                delay: 1.5,
             }}
             style={{
                 backgroundRepeat: "no-repeat",
@@ -86,7 +86,7 @@ export const Highlight = ({
                 display: "inline",
             }}
             className={cn(
-                `relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500 lg:pb-3`,
+                `relative inline-block pb-1 px-5 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500 lg:pb-3`,
                 className
             )}
         >

@@ -9,6 +9,7 @@ import MagicButton from "../magic-button";
 import { RiFileCopyLine } from "react-icons/ri";
 import Lottie from "react-lottie-player";
 import confettiAnimation from "@/lib/confetti.json";
+import { AttentionSeeker, Slide } from "react-awesome-reveal";
 
 export const BentoGrid = ({
     className,
@@ -56,72 +57,81 @@ export const BentoGridItem = ({
     };
 
     return (
-        <div className={cn("relative rounded-lg md:rounded-3xl overflow-hidden p-4 border border-[#363749] min-h-60 md:min-h-36 lg:min-h-48 bg-bg-gradient",
-            className
-        )}
+        <Slide
+            className={cn("relative rounded-lg md:rounded-3xl overflow-hidden p-4 border border-[#363749] min-h-60 md:min-h-36 lg:min-h-48 bg-bg-gradient w-full h-fu",
+                className
+            )}
+            triggerOnce
+            duration={750}
+            direction={id % 2 !== 0 ? "right" : "left"}
+            fraction={0.75}
         >
-
-            {id === 1 && (
-                <>
-                    <StarsBackground />
-                    <ShootingStars />
-                </>
-            )}
-
-            {id === 4 && <BackgroundGradientAnimation />}
-
-            {(image && id === 0) && (
-                <img src={image} className="absolute top-0 left-0 w-full h-full" loading="lazy" />
-            )}
-
-            {(image && id === 2) && (
-                <img src={image} className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-2/3" loading="lazy" />
-            )}
-
-            {(image && id === 3) && (
-                <img src={image} className="absolute top-5 md:top-0 -right-10 md:-right-5 xl:right-0" loading="lazy" />
-            )}
-
-            {(spareImage && (id === 1 || id === 2 || id === 3)) && (
-                <img src={spareImage} className={`absolute top-11 w-full z-10 ${id === 2 ? "-right-8" : "right-0"}`} loading="lazy" />
-            )}
-
-            <div className={cn("absolute flex flex-col gap-1 text-pretty h-full", textClassName)}>
-                <h2 className="text-xl lg:text-3xl font-bold text-white">
-                    {title}
-                </h2>
-
-                <p className="w-1/2 md:w-3/5 text-sm lg:text-lg text-[#BEC1DD]">
-                    {description}
-                </p>
+            <div>
 
                 {id === 1 && (
-                    <div className="flex justify-center gap-8 h-1/3 mt-2">
-                        <img src="icons/angular-icon.png" className="h-full" loading="lazy" />
-                        <img src="icons/react-icon.png" className="h-full" loading="lazy" />
-                    </div>
-                )}
-
-                {id === 4 && (
                     <>
-                        <Lottie
-                            loop={false}
-                            animationData={confettiAnimation}
-                            style={{ width: 400, height: 200, position: "absolute" }}
-                            play={isCopied}
-                            rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-                        />
-
-                        <MagicButton
-                            title={isCopied ? "Email copied!" : "Copy email"}
-                            icon={<RiFileCopyLine />}
-                            handleClick={handleCopy}
-                            otherClasses={`!text-lg bg-[#161A31] ${isCopied && "!cursor-default"}`}
-                        />
+                        <StarsBackground />
+                        <ShootingStars />
                     </>
                 )}
-            </div>
 
-        </div>
+                {id === 4 && <BackgroundGradientAnimation />}
+
+                {(image && id === 0) && (
+                    <img src={image} className="absolute top-0 left-0 w-full h-full" loading="lazy" />
+                )}
+
+                {(image && id === 2) && (
+                    <img src={image} className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-2/3" loading="lazy" />
+                )}
+
+                {(image && id === 3) && (
+                    <img src={image} className="absolute top-5 md:top-0 -right-10 md:-right-5 xl:right-0" loading="lazy" />
+                )}
+
+                {(spareImage && (id === 1 || id === 2 || id === 3)) && (
+                    <img src={spareImage} className={`absolute top-11 w-full z-10 ${id === 2 ? "-right-8" : "right-0"}`} loading="lazy" />
+                )}
+
+                <div className={cn("absolute flex flex-col gap-1 text-pretty h-full", textClassName)}>
+                    <h2 className="text-xl lg:text-3xl font-bold text-white">
+                        {title}
+                    </h2>
+
+                    <p className="w-1/2 md:w-3/5 text-sm lg:text-lg text-[#BEC1DD]">
+                        {description}
+                    </p>
+
+                    {id === 1 && (
+                        <div className="flex justify-center gap-8 h-1/3 mt-2">
+                            <img src="/tech-stack/angular-icon.png" className="h-full" loading="lazy" />
+                            <img src="/tech-stack/react-icon.png" className="h-full" loading="lazy" />
+                        </div>
+                    )}
+
+                    {id === 4 && (
+                        <>
+                            <Lottie
+                                loop={false}
+                                animationData={confettiAnimation}
+                                style={{ width: 400, height: 200, position: "absolute" }}
+                                play={isCopied}
+                                rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+                            />
+
+                            <AttentionSeeker effect="headShake" delay={5000} triggerOnce={false}>
+                                <MagicButton
+                                    title={isCopied ? "Email copied!" : "Copy email"}
+                                    icon={<RiFileCopyLine />}
+                                    handleClick={handleCopy}
+                                    otherClasses={`!text-lg bg-[#161A31] ${isCopied && "!cursor-default"}`}
+                                />
+                            </AttentionSeeker>
+                        </>
+                    )}
+                </div>
+
+            </div>
+        </Slide>
     );
 };

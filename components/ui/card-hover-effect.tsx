@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Zoom } from "react-awesome-reveal";
 import { FaLocationArrow } from "react-icons/fa6";
 
 export const HoverEffect = ({
@@ -83,37 +83,39 @@ export const Card = ({
             )}
         >
 
-            <div className="flex justify-center relative overflow-hidden">
-                <img src="/projects/background.png" alt="image background" width={350} height={350} loading="lazy" className="rounded-lg border border-[#13162D] h-auto w-full"/>
-                <img src={item.image} loading="lazy" className="z-10 absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-lg h-5/6 w-auto"/>
-            </div>
-
-            <div className="flex flex-col gap-4">{children}</div>
-
-            <div className="flex items-center justify-between">
-
-                <div className="flex items-center">
-                    {item.iconList.map((icon, index) => (
-                        <div
-                            key={index}
-                            className="border border-[#3637497D] rounded-full bg-bg-gradient lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                            style={{
-                                transform: `translateX(-${5 * index + 2}px)`,
-                            }}
-                        >
-                            <img src={icon} className="p-2" loading="lazy"/>
-                        </div>
-                    ))}
+            <Zoom duration={750} triggerOnce fraction={1}>
+                <div className="flex justify-center relative overflow-hidden">
+                    <img src="/projects/background.png" alt="image background" width={350} height={350} loading="lazy" className="rounded-lg border border-[#13162D] h-auto w-full" />
+                    <img src={item.image} loading="lazy" className="z-10 absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-lg h-5/6 w-auto" />
                 </div>
 
-                <div className="flex justify-center items-center">
-                    <p className="text-sm md:text-xl text-[#CBACF9] font-medium text-nowrap">
-                        Check Live Site
-                    </p>
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
-                </div>
+                <div className="flex flex-col gap-4">{children}</div>
 
-            </div>
+                <div className="flex items-center justify-between">
+
+                    <div className="flex items-center">
+                        {item.iconList.map((icon, index) => (
+                            <div
+                                key={index}
+                                className="border border-[#3637497D] rounded-full bg-bg-gradient lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                                style={{
+                                    transform: `translateX(-${5 * index + 2}px)`,
+                                }}
+                            >
+                                <img src={icon} className="p-2" loading="lazy" />
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="flex justify-center items-center">
+                        <p className="text-sm md:text-xl text-[#CBACF9] font-medium text-nowrap">
+                            Check Live Site
+                        </p>
+                        <FaLocationArrow className="ms-3" color="#CBACF9" />
+                    </div>
+
+                </div>
+            </Zoom>
 
         </div>
     );

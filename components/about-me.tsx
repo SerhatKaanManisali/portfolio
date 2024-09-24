@@ -1,15 +1,13 @@
 import React from "react"
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
+import Header from "./header";
 
 
 const AboutMe = () => {
     return (
         <section className="flex flex-col items-center gap-6 w-full" id="about-me">
 
-            <h1 className="font-bold text-3xl md:text-5xl text-center">
-                About {" "}
-                <span className="text-[#CBACF9]">Me</span>
-            </h1>
+            <Header text="About" highlight="Me"/>
 
             <BentoGrid>
                 {gridItems.map((item, i) => (
@@ -44,7 +42,7 @@ const gridItems = [
         title: "Angular & React",
         textClassName: "w-full left-0 items-center text-center",
         className: "md:col-span-2 md:row-span-2",
-        description: "Experienced in developing web applications with Angular and React, having built over 10 projects.",
+        description: "Experienced in developing web applications with JavaScript, Angular and React, having built over 10 projects.",
         spareImage: "/bento-images/grid.png",
     },
     {

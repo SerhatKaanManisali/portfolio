@@ -51,7 +51,7 @@ export const FloatingNav = ({
                     y: -100,
                 }}
                 animate={{
-                    y: visible ? 0 : -100,
+                    y: visible ? -15 : -100,
                     opacity: visible ? 1 : 0,
                 }}
                 transition={{
@@ -74,7 +74,7 @@ export const FloatingNav = ({
                         key={`link=${idx}`}
                         href={navItem.link}
                         className={cn(
-                            "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+                            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-[#BEC1DD]"
                         )}
                     >
                         <span className="block sm:hidden">{navItem.icon}</span>
