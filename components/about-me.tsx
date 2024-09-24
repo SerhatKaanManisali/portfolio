@@ -4,11 +4,11 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 const AboutMe = () => {
     return (
-        <section className="flex flex-col items-center gap-6 w-full px-4" id="about-me">
+        <section className="flex flex-col items-center gap-6 w-full" id="about-me">
 
-            <h1 className="flex gap-2 md:gap-3 font-bold text-3xl md:text-5xl">
-                <p>About</p>
-                <p className="text-[#CBACF9]">Me</p>
+            <h1 className="font-bold text-3xl md:text-5xl text-center">
+                About {" "}
+                <span className="text-[#CBACF9]">Me</span>
             </h1>
 
             <BentoGrid>
@@ -50,8 +50,8 @@ const gridItems = [
     {
         id: 2,
         title: "Responsive Design",
-        textClassName: "items-center text-center w-full left-0 ",
-        className: "md:col-span-2 md:row-span-2",
+        textClassName: "items-center text-center w-full left-0",
+        className: "md:col-span-2 md:row-span-1",
         image: "/bento-images/bento-grid-image-2.png",
         spareImage: "bento-images/grid.png",
     },
@@ -62,6 +62,12 @@ const gridItems = [
         className: "md:col-span-3 md:row-span-2",
         image: "/bento-images/bento-grid-image-3.png",
         spareImage: "/bento-images/grid.png",
+    },
+    {
+        id: 4,
+        title: "Do you want to start a project together?",
+        textClassName: "items-center text-center w-full left-0 max-sm:gap-7 lg:gap-3",
+        className: "md:col-span-2 md:row-span-1",
     },
 ];
 

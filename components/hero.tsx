@@ -4,10 +4,9 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Highlight } from "./ui/hero-hightlight";
 import MagicButton from "./magic-button";
-import { HiArrowUpRight } from "react-icons/hi2";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { FlipWords } from "./ui/flip-words";
-import { FaCaretDown } from "react-icons/fa6";
+import { FaCaretDown, FaLocationArrow } from "react-icons/fa6";
 
 const Hero = () => {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -38,7 +37,7 @@ const Hero = () => {
                 </BackgroundGradient>
 
                 <div className="flex flex-col items-center gap-4 md:gap-6 xl:gap-8">
-                    <h1 className="text-3xl font-bold tracking-wider text-[#CBACF9] md:text-4xl lg:text-5xl">Serhat Kaan Manisali</h1>
+                    <h1 className="text-3xl font-bold tracking-wider text-[#CBACF9] md:text-4xl lg:text-5xl text-nowrap">Serhat Kaan Manisali</h1>
 
                     <Highlight className="text-3xl font-semibold tracking-wider text-center w-full md:text-4xl lg:text-5xl">
                         <FlipWords words={flipWords} />
@@ -46,7 +45,7 @@ const Hero = () => {
                     </Highlight>
 
                     <a href="mailto:mail@serhat-kaan-manisali.com" className="w-full lg:max-w-fit">
-                        <MagicButton title="Hit me up" icon={<HiArrowUpRight />} />
+                        <MagicButton title="See my work" icon={<FaLocationArrow />} />
                     </a>
                 </div>
             </div>

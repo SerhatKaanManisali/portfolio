@@ -27,7 +27,7 @@ export const techStack = [
         src: "/icons/sass-icon.svg"
     },
     {
-        name: "Material descriptionign",
+        name: "Material design",
         src: "/icons/material-design-icon.svg"
     },
     {
@@ -66,9 +66,9 @@ export const techStack = [
 
 export const projects = [
     {
-        title: "Pennyflow - Banking platform",
+        title: "Pennyflow - Banking Platform",
         description: "Seamlessly transfer your money. Let your penny flow.",
-        image: "projects/pennyflow.png",
+        image: "/projects/pennyflow.png",
         iconList: ["/icons/react-icon.png", "/icons/nextjs-icon.svg", "/icons/tailwind-css-icon.svg", "/icons/typescript-icon.svg"],
         link: "https://pennyflow.serhat-kaan-manisali.com",
     },
@@ -82,8 +82,8 @@ export const projects = [
     {
         title: "Simple CRM",
         description: "Organize customer relations and track your product sales.",
-        image: "/projects/crm.png",
-        iconList: ["/icons/angular-icon.png", "/icons/sass-icon.svg", "/icons/typescript-icon.svg", "/icons/material-descriptionign-icon.svg", "/icons/firebase-icon.svg"],
+        image: "/projects/simple-crm.png",
+        iconList: ["/icons/angular-icon.png", "/icons/sass-icon.svg", "/icons/typescript-icon.svg", "/icons/material-design-icon.svg", "/icons/firebase-icon.svg"],
         link: "https://simple-crm.serhat-kaan-manisali.com",
     }
 ];

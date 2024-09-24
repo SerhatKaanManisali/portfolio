@@ -8,9 +8,9 @@ const Portfolio = () => {
     return (
         <section className="flex flex-col items-center gap-5 w-full" id="portfolio">
 
-            <h1 className="flex gap-2 md:gap-3 font-bold text-3xl md:text-5xl">
-                <p>Some of my</p>
-                <p className="text-[#CBACF9]">projects</p>
+            <h1 className="font-bold text-3xl md:text-5xl text-center">
+                Some of my {" "}
+                <span className="text-[#CBACF9]">projects</span>
             </h1>
 
             <HoverEffect items={projects}/>

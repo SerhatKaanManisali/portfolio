@@ -1,6 +1,14 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { StarsBackground } from "./stars-background";
 import { ShootingStars } from "./shooting-stars";
+import { useState } from "react";
+import { BackgroundGradientAnimation } from "./background-gradient-animation";
+import MagicButton from "../magic-button";
+import { RiFileCopyLine } from "react-icons/ri";
+import Lottie from "react-lottie";
+import animationData from "@/lib/confetti.json";
 
 export const BentoGrid = ({
     className,
@@ -38,14 +46,29 @@ export const BentoGridItem = ({
     spareImage?: string;
     id: number;
 }) => {
+    const [isCopied, setIsCopied] = useState(false);
+
+    const handleCopy = () => {
+        const text = "mail@serhat-kaan-manisali.com";
+        navigator.clipboard.writeText(text);
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 5000);
+    };
+
+    const defaultOptions = {
+        loop: false,
+        autoplay: isCopied,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
+
+
     return (
-        <div className={cn("relative rounded-3xl overflow-hidden p-4 border border-[#363749] min-h-60 lg:min-h-96",
+        <div className={cn("relative rounded-lg md:rounded-3xl overflow-hidden p-4 border border-[#363749] min-h-60 md:min-h-36 lg:min-h-48 bg-bg-gradient",
             className
         )}
-            style={{
-                background:
-                    "linear-gradient(180deg, var(--slate-800), var(--slate-900)"
-            }}
         >
 
             {id === 1 && (
@@ -54,6 +77,8 @@ export const BentoGridItem = ({
                     <ShootingStars />
                 </>
             )}
+
+            {id === 4 && <BackgroundGradientAnimation />}
 
             {(image && id === 0) && (
                 <img src={image} className="absolute top-0 left-0 w-full h-full" loading="lazy" />
@@ -72,11 +97,11 @@ export const BentoGridItem = ({
             )}
 
             <div className={cn("absolute flex flex-col gap-1 text-pretty h-full", textClassName)}>
-                <h2 className="text-2xl lg:text-3xl font-bold text-[#CBACF9]">
+                <h2 className="text-xl lg:text-3xl font-bold text-white">
                     {title}
                 </h2>
 
-                <p className="w-1/2 md:w-3/5 text-sm lg:text-lg">
+                <p className="w-1/2 md:w-3/5 text-sm lg:text-lg text-[#BEC1DD]">
                     {description}
                 </p>
 
@@ -85,6 +110,22 @@ export const BentoGridItem = ({
                         <img src="icons/angular-icon.png" className="h-full" loading="lazy" />
                         <img src="icons/react-icon.png" className="h-full" loading="lazy" />
                     </div>
+                )}
+
+                {id === 4 && (
+                    <>
+                        <div className="absolute">
+                            <Lottie options={defaultOptions} height={200} width={400} />
+                        </div>
+
+                        <MagicButton
+                            title={isCopied ? "Email copied!" : "Copy email"}
+                            icon={<RiFileCopyLine />}
+                            handleClick={handleCopy}
+                            otherClasses="!text-lg bg-[#161A31]"
+                            disabled={isCopied}
+                        />
+                    </>
                 )}
             </div>
 

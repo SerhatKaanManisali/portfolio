@@ -6,9 +6,9 @@ const TechStack = () => {
     return (
         <section className="flex flex-col items-center gap-3 w-full" id="tech-stack">
 
-            <h1 className="flex gap-2 md:gap-3 font-bold text-3xl md:text-5xl">
-                <p>My</p>
-                <p className="text-[#CBACF9]">Tech Stack</p>
+            <h1 className="font-bold text-3xl md:text-5xl text-center">
+                My {" "}
+                <span className="text-[#CBACF9]">Tech Stack</span>
             </h1>
 
             <InfiniteMovingCards items={techStack} speed="normal" />
