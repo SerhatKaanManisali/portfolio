@@ -1,9 +1,5 @@
 export const navItems = [
     {
-        name: "Home",
-        link: "#hero",
-    },
-    {
         name: "About Me",
         link: "/#about-me",
     },
@@ -14,6 +10,10 @@ export const navItems = [
     {
         name: "Portfolio",
         link: "/#portfolio",
+    },
+    {
+        name: "Contact",
+        link: "/#contact",
     }
 ];
 
@@ -85,5 +85,18 @@ export const projects = [
         image: "/projects/simple-crm.png",
         iconList: ["/icons/angular-icon.png", "/icons/sass-icon.svg", "/icons/typescript-icon.svg", "/icons/material-design-icon.svg", "/icons/firebase-icon.svg"],
         link: "https://simple-crm.serhat-kaan-manisali.com",
+    }
+];
+
+export const socialMedia = [
+    {
+        id: 0,
+        image: "/footer/github.png",
+        url: "https://github.com/SerhatKaanManisali"
+    },
+    {
+        id: 1,
+        image: "/footer/linkedin.png",
+        url: "https://www.linkedin.com/in/serhat-kaan-manisali"
     }
 ];

@@ -7,8 +7,8 @@ import { useState } from "react";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import MagicButton from "../magic-button";
 import { RiFileCopyLine } from "react-icons/ri";
-import Lottie from "react-lottie";
-import animationData from "@/lib/confetti.json";
+import Lottie from "react-lottie-player";
+import confettiAnimation from "@/lib/confetti.json";
 
 export const BentoGrid = ({
     className,
@@ -54,16 +54,6 @@ export const BentoGridItem = ({
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 5000);
     };
-
-    const defaultOptions = {
-        loop: false,
-        autoplay: isCopied,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
-
 
     return (
         <div className={cn("relative rounded-lg md:rounded-3xl overflow-hidden p-4 border border-[#363749] min-h-60 md:min-h-36 lg:min-h-48 bg-bg-gradient",
@@ -114,16 +104,19 @@ export const BentoGridItem = ({
 
                 {id === 4 && (
                     <>
-                        <div className="absolute">
-                            <Lottie options={defaultOptions} height={200} width={400} />
-                        </div>
+                        <Lottie
+                            loop={false}
+                            animationData={confettiAnimation}
+                            style={{ width: 400, height: 200, position: "absolute" }}
+                            play={isCopied}
+                            rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+                        />
 
                         <MagicButton
                             title={isCopied ? "Email copied!" : "Copy email"}
                             icon={<RiFileCopyLine />}
                             handleClick={handleCopy}
-                            otherClasses="!text-lg bg-[#161A31]"
-                            disabled={isCopied}
+                            otherClasses={`!text-lg bg-[#161A31] ${isCopied && "!cursor-default"}`}
                         />
                     </>
                 )}
