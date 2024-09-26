@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from 'next/font/google';
 import "./globals.css";
-import { ThemeProvider } from "@/app/theme-provider";
+import { ThemeProvider } from "@/app/[lang]/theme-provider";
 
 const roboto = Roboto({ 
     subsets: ["latin"],
@@ -13,13 +13,19 @@ export const metadata: Metadata = {
     description: "Take a look at my projects!",
 };
 
+export async function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'de' }];
+}
+
 export default function RootLayout({
     children,
+    lang
 }: Readonly<{
     children: React.ReactNode;
+    lang: string;
 }>) {
     return (
-        <html lang="en">
+        <html lang={lang}>
             <body className={`${roboto}`}>
                 <ThemeProvider
                     attribute="class"

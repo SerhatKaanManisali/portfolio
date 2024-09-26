@@ -38,15 +38,8 @@ export const BentoGridItem = ({
     image,
     spareImage,
     id,
-}: {
-    className?: string;
-    textClassName?: string;
-    title?: string | React.ReactNode;
-    description?: string | React.ReactNode;
-    image?: string;
-    spareImage?: string;
-    id: number;
-}) => {
+    button
+}: GridItem) => {
     const [isCopied, setIsCopied] = useState(false);
 
     const handleCopy = () => {
@@ -103,7 +96,7 @@ export const BentoGridItem = ({
                     </p>
 
                     {id === 1 && (
-                        <div className="flex justify-center gap-8 h-1/3 mt-2">
+                        <div className="flex justify-center gap-8 h-1/3">
                             <img src="/tech-stack/angular-icon.png" className="h-full" loading="lazy" />
                             <img src="/tech-stack/react-icon.png" className="h-full" loading="lazy" />
                         </div>
@@ -121,7 +114,7 @@ export const BentoGridItem = ({
 
                             <AttentionSeeker effect="headShake" delay={5000} triggerOnce={false}>
                                 <MagicButton
-                                    title={isCopied ? "Email copied!" : "Copy email"}
+                                    title={isCopied ? button?.copied : button?.default}
                                     icon={<RiFileCopyLine />}
                                     handleClick={handleCopy}
                                     otherClasses={`!text-lg bg-[#161A31] ${isCopied && "!cursor-default"}`}

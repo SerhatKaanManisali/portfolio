@@ -1,5 +1,3 @@
-import { FloatingNav } from "@/components/ui/floating-navbar";
-import { navItems } from "@/lib/data";
 import React from "react";
 
 const Imprint = () => {

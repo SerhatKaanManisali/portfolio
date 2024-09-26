@@ -1,3 +1,6 @@
+import { FaCircleInfo, FaGithub, FaLinkedin } from "react-icons/fa6";
+import { MdPrivacyTip } from "react-icons/md";
+
 export const navItems = [
     {
         name: "About Me",
@@ -64,53 +67,63 @@ export const techStack = [
     },
 ];
 
-export const projects = [
+export const staticProjects = [
     {
-        title: "Pennyflow - Banking Platform",
-        description: "Seamlessly transfer your money. Let your penny flow.",
         image: "/projects/pennyflow.png",
-        iconList: ["/tech-stack/react-icon.png", "/tech-stack/nextjs-icon.svg", "/tech-stack/tailwind-css-icon.svg", "/tech-stack/typescript-icon.svg"],
+        iconList: [
+            "/tech-stack/react-icon.png",
+            "/tech-stack/nextjs-icon.svg",
+            "/tech-stack/tailwind-css-icon.svg",
+            "/tech-stack/typescript-icon.svg"
+        ],
         link: "https://pennyflow.serhat-kaan-manisali.com",
     },
     {
-        title: "El Pollo Loco - Jump 'n' Run Game",
-        description: "Play as Pepe and face your dreaded enemy, El Pollo Loco.",
         image: "/projects/el-pollo-loco.png",
-        iconList: ["/tech-stack/javascript-icon.svg", "/tech-stack/css-icon.svg", "/tech-stack/html-icon.svg"],
+        iconList: [
+            "/tech-stack/javascript-icon.svg",
+            "/tech-stack/css-icon.svg",
+            "/tech-stack/html-icon.svg"
+        ],
         link: "https://el-pollo-loco.serhat-kaan-manisali.com",
     },
     {
-        title: "Simple CRM",
-        description: "Organize customer relations and track your product sales.",
         image: "/projects/simple-crm.png",
-        iconList: ["/tech-stack/angular-icon.png", "/tech-stack/sass-icon.svg", "/tech-stack/typescript-icon.svg", "/tech-stack/material-design-icon.svg", "/tech-stack/firebase-icon.svg"],
+        iconList: [
+            "/tech-stack/angular-icon.png",
+            "/tech-stack/sass-icon.svg",
+            "/tech-stack/typescript-icon.svg",
+            "/tech-stack/material-design-icon.svg",
+            "/tech-stack/firebase-icon.svg"
+        ],
         link: "https://simple-crm.serhat-kaan-manisali.com",
     }
 ];
 
-export const footerLinks: {
-    id: number;
-    image?: string;
-    url: string;
-}[] = [
+
+export const footerLinks = [
     {
         id: 1,
-        image: "/footer/github.png",
-        url: "https://github.com/SerhatKaanManisali"
+        title: "GitHub",
+        icon: <FaGithub />,
+        href: "https://github.com/SerhatKaanManisali"
     },
     {
         id: 2,
-        image: "/footer/linkedin.png",
-        url: "https://www.linkedin.com/in/serhat-kaan-manisali"
+        title: "LinkedIn",
+        icon: <FaLinkedin />,
+        href: "https://www.linkedin.com/in/serhat-kaan-manisali"
     },
     {
         id: 3,
-        image: "/footer/imprint.png",
-        url: "/imprint",
+        title: "Imprint",
+        icon: <FaCircleInfo />,
+        href: "/imprint",
     },
     {
         id: 4,
-        image: "/footer/privacy-policy.png",
-        url: "/privacy-policy",
+        title: "Privacy policy",
+        icon: <MdPrivacyTip />,
+        href: "/privacy-policy",
     },
 ];

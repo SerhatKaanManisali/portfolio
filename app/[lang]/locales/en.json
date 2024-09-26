@@ -1,0 +1,78 @@
+{
+    "navItems": {
+        "aboutMe": "About Me",
+        "techStack": "Tech Stack",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "hero": {
+        "subtitle": "Developer",
+        "button": "See my work"
+    },
+    "aboutMe": {
+        "title": {
+            "text": "About",
+            "highlight": "Me"
+        },
+        "gridItems": [
+            {
+                "title": "User Friendly",
+                "description": "Focus on creating smooth and intuitive user experience."
+            },
+            {
+                "title": "Angular & React",
+                "description": "Experienced in developing web applications with JavaScript, Angular and React, having built over 10 projects."
+            },
+            {
+                "title": "Responsive Design",
+                "description": ""
+            },
+            {
+                "title": "Clean Code",
+                "description": "Place great emphasis on clean and readable code."
+            },
+            {
+                "title": "Do you want to start a project together?",
+                "description": "",
+                "button": {
+                    "default": "Copy email",
+                    "copied": "Email copied!"
+                }
+            }
+        ]
+    },
+    "techStack": {
+        "title": {
+            "text": "My",
+            "highlight": "Tech Stack"
+        }
+    },
+    "portfolio": {
+        "title": {
+            "text": "Some of my",
+            "highlight": "projects"
+        },
+        "projects": [
+            {
+                "title": "Pennyflow - Banking Platform",
+                "description": "Seamlessly transfer your money. Let your penny flow."
+            },
+            {
+                "title": "El Pollo Loco - Jump 'n' Run Game",
+                "description": "Play as Pepe and face your dreaded enemy, El Pollo Loco."
+            },
+            {
+                "title": "Simple CRM",
+                "description": "Organize customer relations and track your product sales."
+            }
+        ],
+        "linkText": "Check live site"
+    },
+    "footer": {
+        "highlightBefore": "Ready to take",
+        "highlight": "your",
+        "highlightAfter": "digital presence to the next level?",
+        "text": "Reach out to me today and let's discuss how I can help you achieve your goals.",
+        "button": "Let's get in touch"
+    }
+}

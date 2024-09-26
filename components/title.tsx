@@ -3,11 +3,11 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 
-const Header = ({
+const Title = ({
         text,
         highlight
     } : {
-        text: string;
+        text?: string;
         highlight: string;
     }
 ) => {
@@ -21,4 +21,4 @@ const Header = ({
     );
 };
 
-export default Header;
+export default Title;

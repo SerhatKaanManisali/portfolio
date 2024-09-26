@@ -1,0 +1,77 @@
+{
+    "navItems": {
+        "aboutMe": "Über mich",
+        "techStack": "Technologien",
+        "portfolio": "Portfolio",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "subtitle": "Entwickler",
+        "button": "Meine Arbeit"
+    },
+    "aboutMe": {
+        "title": {
+            "text": "Über",
+            "highlight": "Mich"
+        },
+        "gridItems": [
+            {
+                "title": "Benutzerfreundlich",
+                "description": "Fokus auf eine reibungslose und intuitive Benutzererfahrung."
+            },
+            {
+                "title": "Angular & React",
+                "description": "Erfahren in der Entwicklung von Webanwendungen mit JavaScript, Angular und React, mit mehr als 10 Projekten."
+            },
+            {
+                "title": "Responsive Design",
+                "description": ""
+            },
+            {
+                "title": "Sauberer Code",
+                "description": "Großer Wert auf sauberen und lesbaren Code."
+            },
+            {
+                "title": "Möchten Sie gemeinsam ein Projekt starten?",
+                "description": "",
+                "button": {
+                    "default": "Email kopieren",
+                    "copied": "Email kopiert!"
+                }
+            }
+        ]
+    },
+    "techStack": {
+        "title": {
+            "highlight": "Technologien"
+        }
+    },
+    "portfolio": {
+        "title": {
+            "text": "Einige meiner",
+            "highlight": "Projekte"
+        },
+        "projects": [
+            {
+                "title": "Pennyflow - Banking-Plattform",
+                "description": "Geld senden leicht gemacht. Bringen Sie Ihre Pennys ins Rollen."
+            },
+            {
+                "title": "El Pollo Loco - Jump 'n' Run Spiel",
+                "description": "Spielen Sie Pepe und stelle Sie sich Ihrem gefürchteten Erzfeind, El Pollo Loco."
+            },
+            {
+                "title": "Simple CRM",
+                "description": "Organisieren Sie Kundenbeziehungen und halten Ihre Produktverkäufe im Überblick."
+            }
+        ],
+        "linkText": "Live testen"
+    },
+    "footer": {
+        "highlightBefore": "Bereit,",
+        "highlight": "Ihre",
+        "highlightAfter": "Online-Präsenz auf das nächste Level zu bringen?",
+        "text": "Setzen Sie sich noch heute mit mir in Verbindung und lassen Sie uns besprechen, wie ich Ihnen helfen kann, Ihre Ziele zu erreichen.",
+        "button": "Nachricht schicken"
+    }
+}

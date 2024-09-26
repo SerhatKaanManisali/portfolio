@@ -1,17 +1,27 @@
 "use client";
 
 import React from "react";
-import { projects } from "@/lib/data";
+import { staticProjects } from "@/lib/data";
 import { HoverEffect } from "./ui/card-hover-effect";
-import Header from "./header";
+import Title from "./title";
 
-const Portfolio = () => {
+const Portfolio = ({ locales }: ClientLocales) => {
+
+    const title = locales.portfolio.title;
+    const dynamicProjects = locales.portfolio.projects;
+    const linkText = locales.portfolio.linkText;
+
+    const projects = dynamicProjects.map((project: any, idx: number) => ({
+        ...project,
+        ...staticProjects[idx],
+    }));
+
     return (
         <section className="flex flex-col items-center gap-5 w-full" id="portfolio">
 
-            <Header text="Some of my" highlight="projects"/>
+            <Title text={title.text} highlight={title.highlight} />
 
-            <HoverEffect items={projects}/>
+            <HoverEffect items={projects} linkText={linkText} />
 
         </section>
     );

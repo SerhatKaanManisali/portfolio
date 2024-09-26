@@ -8,6 +8,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 export const HoverEffect = ({
     items,
     className,
+    linkText,
 }: {
     items: {
         title: string;
@@ -17,6 +18,7 @@ export const HoverEffect = ({
         iconList: string[];
     }[];
     className?: string;
+    linkText: string;
 }) => {
     let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -53,7 +55,7 @@ export const HoverEffect = ({
                             />
                         )}
                     </AnimatePresence>
-                    <Card item={item}>
+                    <Card item={item} linkText={linkText}>
                         <CardTitle>{item.title}</CardTitle>
                         <CardDescription>{item.description}</CardDescription>
                     </Card>
@@ -66,14 +68,16 @@ export const HoverEffect = ({
 export const Card = ({
     className,
     children,
-    item
+    item,
+    linkText
 }: {
     className?: string;
     children: React.ReactNode;
     item: {
         image: string;
         iconList: string[];
-    }
+    },
+    linkText: string
 }) => {
     return (
         <div
@@ -109,7 +113,7 @@ export const Card = ({
 
                     <div className="flex justify-center items-center">
                         <p className="text-sm md:text-xl text-[#CBACF9] font-medium text-nowrap">
-                            Check Live Site
+                            {linkText}
                         </p>
                         <FaLocationArrow className="ms-3" color="#CBACF9" />
                     </div>
