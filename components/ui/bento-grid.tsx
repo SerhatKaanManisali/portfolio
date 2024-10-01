@@ -112,7 +112,7 @@ export const BentoGridItem = ({
 
                             <AttentionSeeker effect="headShake" delay={5000} triggerOnce={false}>
                                 <MagicButton
-                                    title={isCopied ? button?.copied : button?.default}
+                                    title={isCopied ? button!.copied : button!.default}
                                     icon={<RiFileCopyLine />}
                                     handleClick={handleCopy}
                                     otherClasses={`!text-lg bg-[#161A31] ${isCopied && "!cursor-default"}`}
