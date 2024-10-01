@@ -17,13 +17,12 @@ export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'de' }];
 }
 
-export default function RootLayout({
-    children,
-    lang
-}: Readonly<{
-    children: React.ReactNode;
-    lang: string;
-}>) {
+export default function RootLayout(props: RootParams | RootParamsExtended) {
+    const {children, lang} = {
+        ...props,
+        lang: undefined
+    }
+
     return (
         <html lang={lang}>
             <body className={`${roboto}`}>

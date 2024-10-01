@@ -1,3 +1,12 @@
+interface RootParams {
+    children: React.ReactNode;
+}
+
+interface RootParamsExtended {
+    children: React.ReactNode;
+    lang: string;
+}
+
 interface DictionaryProps {
     [key: string]: any;
 }
