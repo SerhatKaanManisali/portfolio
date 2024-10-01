@@ -3,10 +3,10 @@ import { Roboto } from 'next/font/google';
 import "./globals.css";
 import { ThemeProvider } from "@/app/[lang]/theme-provider";
 
-const roboto = Roboto({ 
+const roboto = Roboto({
     subsets: ["latin"],
     weight: ["100", "300", "400", "500", "700", "900"]
- });
+});
 
 export const metadata: Metadata = {
     title: "Serhat Kaan Manisali",
@@ -17,13 +17,7 @@ export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'de' }];
 }
 
-export default function RootLayout({
-    children,
-    lang
-}: Readonly<{
-    children: React.ReactNode;
-    lang: string;
-}>) {
+export default function RootLayout({ children, lang }: Readonly<RootParams>) {
     return (
         <html lang={lang}>
             <body className={`${roboto}`}>

@@ -8,23 +8,6 @@ import React, {
   useCallback,
 } from "react";
 
-interface StarProps {
-  x: number;
-  y: number;
-  radius: number;
-  opacity: number;
-  twinkleSpeed: number | null;
-}
-
-interface StarBackgroundProps {
-  starDensity?: number;
-  allStarsTwinkle?: boolean;
-  twinkleProbability?: number;
-  minTwinkleSpeed?: number;
-  maxTwinkleSpeed?: number;
-  className?: string;
-}
-
 export const StarsBackground: React.FC<StarBackgroundProps> = ({
   starDensity = 0.00015,
   allStarsTwinkle = true,

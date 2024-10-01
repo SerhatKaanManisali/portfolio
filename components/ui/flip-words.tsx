@@ -6,13 +6,9 @@ import { cn } from "@/lib/utils";
 
 export const FlipWords = ({
   words,
-  duration = 4000,
+  duration = 3000,
   className,
-}: {
-  words: string[];
-  duration?: number;
-  className?: string;
-}) => {
+}: FlipWordsParams) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 

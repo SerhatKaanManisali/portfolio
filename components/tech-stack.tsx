@@ -5,12 +5,12 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { techStack } from "@/lib/data";
 import Title from "./title";
 
-const TechStack = ({ locales }: ClientLocales) => {
+const TechStack = ({ locales }: ClientLocalesParams) => {
 
     const highlight = locales.techStack.title.highlight;
 
     return (
-        <section className="flex flex-col items-center gap-3 w-full" id="tech-stack">
+        <section className="container-column gap-3" id="tech-stack">
 
             <Title highlight={highlight} />
 

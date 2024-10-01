@@ -6,16 +6,13 @@ import { Fade } from "react-awesome-reveal";
 const Title = ({
         text,
         highlight
-    } : {
-        text?: string;
-        highlight: string;
-    }
+    } : TitleParams
 ) => {
     return (
-        <h1 className="font-bold text-3xl md:text-5xl text-center flex">
+        <h1 className="section-title">
             <Fade duration={750} triggerOnce fraction={1}>
                 <span>{text}&nbsp;</span>
-                <span className="text-[#CBACF9]">{highlight}</span>
+                <span className="text-text-primary">{highlight}</span>
             </Fade>
         </h1>
     );

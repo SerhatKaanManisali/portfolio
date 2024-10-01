@@ -17,24 +17,9 @@ export const BackgroundGradientAnimation = ({
     className,
     interactive = true,
     containerClassName,
-}: {
-    gradientBackgroundStart?: string;
-    gradientBackgroundEnd?: string;
-    firstColor?: string;
-    secondColor?: string;
-    thirdColor?: string;
-    fourthColor?: string;
-    fifthColor?: string;
-    pointerColor?: string;
-    size?: string;
-    blendingValue?: string;
-    children?: React.ReactNode;
-    className?: string;
-    interactive?: boolean;
-    containerClassName?: string;
-}) => {
+}: BackgroundGradientAnimationProps) => {
     const interactiveRef = useRef<HTMLDivElement>(null);
-
+    
     const [curX, setCurX] = useState(0);
     const [curY, setCurY] = useState(0);
     const [tgX, setTgX] = useState(0);

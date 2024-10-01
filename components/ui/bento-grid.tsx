@@ -14,10 +14,7 @@ import { AttentionSeeker, Slide } from "react-awesome-reveal";
 export const BentoGrid = ({
     className,
     children,
-}: {
-    className?: string;
-    children?: React.ReactNode;
-}) => {
+}: ParentContainerParams) => {
     return (
         <div
             className={cn(
@@ -39,7 +36,7 @@ export const BentoGridItem = ({
     spareImage,
     id,
     button
-}: GridItem) => {
+}: BentoGridItem) => {
     const [isCopied, setIsCopied] = useState(false);
 
     const handleCopy = () => {
@@ -51,7 +48,7 @@ export const BentoGridItem = ({
 
     return (
         <Slide
-            className={cn("relative rounded-lg md:rounded-3xl overflow-hidden p-4 border border-[#363749] min-h-60 md:min-h-36 lg:min-h-48 bg-bg-gradient w-full h-fu",
+            className={cn("relative rounded-lg md:rounded-3xl overflow-hidden p-4 border border-border-primary min-h-60 md:min-h-36 lg:min-h-48 bg-bg-gradient w-full h-fu",
                 className
             )}
             triggerOnce
@@ -96,9 +93,10 @@ export const BentoGridItem = ({
                     </p>
 
                     {id === 1 && (
-                        <div className="flex justify-center gap-8 h-1/3">
-                            <img src="/tech-stack/angular-icon.png" className="h-full" loading="lazy" />
-                            <img src="/tech-stack/react-icon.png" className="h-full" loading="lazy" />
+                        <div className="flex justify-center gap-6 h-1/3 mt-2">
+                            <img src="/tech-stack/angular-icon.png" className="h-auto w-full max-w-16 max-h-16 lg:max-w-20 lg:max-h-20" loading="lazy" />
+                            <img src="/tech-stack/javascript-icon.svg" className="h-auto w-full max-w-16 max-h-16 lg:max-w-20 lg:max-h-20" loading="lazy" />
+                            <img src="/tech-stack/react-icon.png" className="h-auto w-full max-w-16 max-h-16 lg:max-w-20 lg:max-h-20" loading="lazy" />
                         </div>
                     )}
 

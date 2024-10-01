@@ -9,17 +9,8 @@ export const HoverEffect = ({
     items,
     className,
     linkText,
-}: {
-    items: {
-        title: string;
-        description: string;
-        link: string;
-        image: string;
-        iconList: string[];
-    }[];
-    className?: string;
-    linkText: string;
-}) => {
+}: HoverEffectParams
+) => {
     let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
@@ -70,19 +61,11 @@ export const Card = ({
     children,
     item,
     linkText
-}: {
-    className?: string;
-    children: React.ReactNode;
-    item: {
-        image: string;
-        iconList: string[];
-    },
-    linkText: string
-}) => {
+}: HoverEffectCardParams) => {
     return (
         <div
             className={cn(
-                "flex flex-col gap-4 rounded-lg md:rounded-3xl h-full w-full p-8 overflow-hidden bg-bg-gradient border border-[#3637496E] group-hover:border-slate-700 relative z-20",
+                "flex flex-col gap-4 rounded-lg md:rounded-3xl h-full w-full p-8 overflow-hidden bg-bg-gradient border border-border-primary group-hover:border-slate-700 relative z-20",
                 className
             )}
         >
@@ -101,7 +84,7 @@ export const Card = ({
                         {item.iconList.map((icon, index) => (
                             <div
                                 key={index}
-                                className="border border-[#3637497D] rounded-full bg-bg-gradient lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                                className="border border-border-primary rounded-full bg-bg-gradient lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                                 style={{
                                     transform: `translateX(-${5 * index + 2}px)`,
                                 }}
@@ -112,7 +95,7 @@ export const Card = ({
                     </div>
 
                     <div className="flex justify-center items-center">
-                        <p className="text-sm md:text-xl text-[#CBACF9] font-medium text-nowrap">
+                        <p className="text-sm md:text-xl text-text-primary font-medium text-nowrap">
                             {linkText}
                         </p>
                         <FaLocationArrow className="ms-3" color="#CBACF9" />
@@ -128,10 +111,7 @@ export const Card = ({
 export const CardTitle = ({
     className,
     children,
-}: {
-    className?: string;
-    children: React.ReactNode;
-}) => {
+}: ParentContainerParams) => {
     return (
         <h4 className={cn(" font-bold tracking-wide text-xl", className)}>
             {children}
@@ -142,10 +122,7 @@ export const CardTitle = ({
 export const CardDescription = ({
     className,
     children,
-}: {
-    className?: string;
-    children: React.ReactNode;
-}) => {
+}: ParentContainerParams) => {
     return (
         <p
             className={cn(

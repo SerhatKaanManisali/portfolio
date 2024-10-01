@@ -1,10 +1,10 @@
 {
-    "navItems": {
-        "aboutMe": "About Me",
-        "techStack": "Tech Stack",
-        "portfolio": "Portfolio",
-        "contact": "Contact"
-    },
+    "navItems": [
+        "About Me",
+        "Tech Stack",
+        "Portfolio",
+        "Contact"
+    ],
     "hero": {
         "subtitle": "Developer",
         "button": "See my work"
@@ -20,8 +20,8 @@
                 "description": "Focus on creating smooth and intuitive user experience."
             },
             {
-                "title": "Angular & React",
-                "description": "Experienced in developing web applications with JavaScript, Angular and React, having built over 10 projects."
+                "title": "Hands On Experience",
+                "description": "Developed more than 10 web applications with JavaScript, Angular and React."
             },
             {
                 "title": "Responsive Design",
@@ -73,6 +73,28 @@
         "highlight": "your",
         "highlightAfter": "digital presence to the next level?",
         "text": "Reach out to me today and let's discuss how I can help you achieve your goals.",
-        "button": "Let's get in touch"
+        "button": "Let's get in touch",
+        "imprint": "Imprint",
+        "privacyPolicy": "Privacy policy"
+    },
+    "imprint": {
+        "title": "Imprint",
+        "subtitle1": "Information according to 5 TMG",
+        "subtitle2": "Contact"
+    },
+    "privacyPolicy": {
+        "title": "Privacy policy",
+        "generalInformationTitle": "General information",
+        "generalInformationText": "The following information provides a simple overview of what is done with your personal data when you visit this website. Personal data is all data with which you can be personally identified. Detailed information on the subject of data protection can be found in our data protection declaration listed below this text.",
+        "dataCollectionTitle": "Data collection on this website",
+        "responsibleTitle": "Who is responsible for data collection on this website?",
+        "responsibleText": "Data processing on this website is carried out by the website operator. The operator's contact details can be found in the section 'Note on the responsible body' in this privacy policy.",
+        "dataCollectionMethodTitle": "How do we collect your data?",
+        "dataCollectionMethodText1": "On the one hand, your data is collected when you provide it to us. This can be, for example, data that you enter in a contact form.",
+        "dataCollectionMethodText2": "Other data is collected automatically or with your consent by our IT systems when you visit the website. This is primarily technical data (e.g. internet browser, operating system or time of the page view). This data is collected automatically as soon as you enter this website.",
+        "dataUsageTitle": "What do we use your data for?",
+        "dataUsageText": "Some of the data is collected in order to ensure error-free provision of the website. Other data can be used to analyse your user behaviour.",
+        "dataRightsTitle": "What rights do you have with regard to your data?",
+        "dataRightsText": "You have the right to receive information free of charge at any time about the origin, recipient and purpose of your stored personal data. You also have the right to request the correction or erasure of this data. If you have given your consent to data processing, you can revoke this consent at any time for the future. Furthermore, you have the right, under certain circumstances, to request the restriction of the processing of your personal data. You also have the right to lodge a complaint with the competent supervisory authority."
     }
 }

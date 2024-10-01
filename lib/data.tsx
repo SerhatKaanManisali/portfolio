@@ -1,22 +1,22 @@
 import { FaCircleInfo, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdPrivacyTip } from "react-icons/md";
 
-export const navItems = [
+export const getNavitems = (locales: string[]) => [
     {
-        name: "About Me",
-        link: "/#about-me",
+        name: locales[0],
+        link: "#about-me",
     },
     {
-        name: "Tech Stack",
-        link: "/#tech-stack",
+        name: locales[1],
+        link: "#tech-stack",
     },
     {
-        name: "Portfolio",
-        link: "/#portfolio",
+        name: locales[2],
+        link: "#portfolio",
     },
     {
-        name: "Contact",
-        link: "/#contact",
+        name: locales[3],
+        link: "#contact",
     }
 ];
 
@@ -67,8 +67,10 @@ export const techStack = [
     },
 ];
 
-export const staticProjects = [
+export const getProjects = (locales: ProjectLocalesProps[]) => [
     {
+        title: locales[0].title,
+        description: locales[0].description,
         image: "/projects/pennyflow.png",
         iconList: [
             "/tech-stack/react-icon.png",
@@ -79,6 +81,8 @@ export const staticProjects = [
         link: "https://pennyflow.serhat-kaan-manisali.com",
     },
     {
+        title: locales[1].title,
+        description: locales[1].description,
         image: "/projects/el-pollo-loco.png",
         iconList: [
             "/tech-stack/javascript-icon.svg",
@@ -88,6 +92,8 @@ export const staticProjects = [
         link: "https://el-pollo-loco.serhat-kaan-manisali.com",
     },
     {
+        title: locales[2].title,
+        description: locales[2].description,
         image: "/projects/simple-crm.png",
         iconList: [
             "/tech-stack/angular-icon.png",
@@ -100,8 +106,7 @@ export const staticProjects = [
     }
 ];
 
-
-export const footerLinks = [
+export const getFooterLinks = (locales: FooterLinksLocalesProps) => [
     {
         id: 1,
         title: "GitHub",
@@ -116,13 +121,13 @@ export const footerLinks = [
     },
     {
         id: 3,
-        title: "Imprint",
+        title: locales.imprint,
         icon: <FaCircleInfo />,
         href: "/imprint",
     },
     {
         id: 4,
-        title: "Privacy policy",
+        title: locales.privacyPolicy,
         icon: <MdPrivacyTip />,
         href: "/privacy-policy",
     },

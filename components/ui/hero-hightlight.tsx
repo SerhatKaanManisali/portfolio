@@ -63,10 +63,7 @@ export const HeroHighlight = ({
 export const Highlight = ({
     children,
     className,
-}: {
-    children: React.ReactNode;
-    className?: string;
-}) => {
+}: ParentContainerParams) => {
     return (
         <motion.span
             initial={{

@@ -22,7 +22,10 @@ const config: Config = {
                 black: {
                     DEFAULT: "#000000",
                     100: "#000319"
-                }
+                },
+                "text-primary": "#CBACF9",
+                "text-secondary": "#BEC1DD",
+                "border-primary": "#363749"
             },
             backgroundImage: {
                 "bg-gradient": "linear-gradient(103.4deg, #04071D 16.66%, #0C0E23 81.61%)",

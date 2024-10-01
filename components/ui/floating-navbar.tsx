@@ -8,30 +8,31 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getNavitems } from "@/lib/data";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 
-export const FloatingNav = ({ locales }: ClientLocales) => {
+export const FloatingNav = ({ locales, lang }: ClientLocalesParams) => {
 
-    const {aboutMe, techStack, portfolio, contact} = locales.navItems;
-
-    const navItems = [
-        { name: aboutMe, link: '/#about-me' },
-        { name: techStack, link: '/#tech-stack' },
-        { name: portfolio, link: '/#portfolio' },
-        { name: contact, link: '/#contact' },
-    ];
-
+    const router = useRouter();
+    const pathname = usePathname();
+    const navItems = getNavitems(locales.navItems);
     const { scrollYProgress } = useScroll();
-
-    // set true for the initial state so that nav bar is visible in the hero section
     const [visible, setVisible] = useState(true);
 
+    const toggleLanguage = () => {
+        const segments = pathname.split("/").filter(Boolean);
+        const hash = window.location.hash;
+        segments[0] = segments[0] === "de-DE" ? "en" : "de-DE";
+        const newPath = `/${segments.join("/")}${hash}`;
+        router.replace(newPath);
+    }
+
     useMotionValueEvent(scrollYProgress, "change", (current) => {
-        // Check if current is not undefined and is a number
         if (typeof current === "number") {
             let direction = current! - scrollYProgress.getPrevious()!;
 
             if (scrollYProgress.get() < 0.05) {
-                // also set true for the initial state
                 setVisible(true);
             } else {
                 if (direction < 0) {
@@ -68,14 +69,21 @@ export const FloatingNav = ({ locales }: ClientLocales) => {
                 {navItems.map((navItem: any, idx: number) => (
                     <Link
                         key={`link=${idx}`}
-                        href={navItem.link}
+                        href={`/${lang}/${navItem.link}`}
                         className={cn(
-                            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-[#BEC1DD]"
+                            "relative items-center flex space-x-1 hover:text-[#BEC1DD]"
                         )}
                     >
-                        <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+                        <span className="text-xs sm:text-sm !cursor-pointer text-nowrap">{navItem.name}</span>
                     </Link>
                 ))}
+
+                <button onClick={toggleLanguage}>
+                    {lang === "en"
+                        ? <Image src={`${lang}/german.svg`} alt="DE" width={20} height={20} loading="eager" className="h-3 w-5 hover:scale-125 transition-transform"/>
+                        : <Image src={`${lang}/english.svg`} alt="EN" width={20} height={20} loading="eager" className="h-3 w-5 hover:scale-125 transition-transform"/>
+                    }
+                </button>
 
             </motion.div>
         </AnimatePresence>

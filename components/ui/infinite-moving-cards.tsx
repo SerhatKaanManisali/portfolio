@@ -9,16 +9,7 @@ export const InfiniteMovingCards = ({
     speed = "fast",
     pauseOnHover = true,
     className,
-}: {
-    items: {
-        name: string;
-        src: string;
-    }[];
-    direction?: "left" | "right";
-    speed?: "fast" | "normal" | "slow";
-    pauseOnHover?: boolean;
-    className?: string;
-}) => {
+}: MovingCardsParams) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
     const scrollerRef = React.useRef<HTMLUListElement>(null);
 
@@ -86,7 +77,7 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item) => (
                     <li
-                        className="min-w-44 rounded-lg md:rounded-3xl border border-b-0 flex-shrink-0 border-[#3637497D] px-6 py-6 bg-bg-gradient"
+                        className="min-w-44 rounded-lg md:rounded-3xl border border-b-0 flex-shrink-0 border-border-primary px-6 py-6 bg-bg-gradient"
                         key={item.name}
                     >
                         <div className="flex flex-col items-center justify-center gap-2 h-full">

@@ -1,4 +1,4 @@
-export const getDictionary = async (locale: string): Promise<{ [key: string]: any }> => {
+export const getDictionary = async (locale: string): Promise<DictionaryProps> => {
     switch (locale) {
         case 'en':
             return (await import('./locales/en.json')).default;

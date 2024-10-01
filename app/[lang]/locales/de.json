@@ -1,10 +1,10 @@
 {
-    "navItems": {
-        "aboutMe": "Über mich",
-        "techStack": "Technologien",
-        "portfolio": "Portfolio",
-        "contact": "Kontakt"
-    },
+    "navItems": [
+        "Über mich",
+        "Technologien",
+        "Portfolio",
+        "Kontakt"
+    ],
     "hero": {
         "subtitle": "Entwickler",
         "button": "Meine Arbeit"
@@ -20,8 +20,8 @@
                 "description": "Fokus auf eine reibungslose und intuitive Benutzererfahrung."
             },
             {
-                "title": "Angular & React",
-                "description": "Erfahren in der Entwicklung von Webanwendungen mit JavaScript, Angular und React, mit mehr als 10 Projekten."
+                "title": "Projekterfahrung",
+                "description": "Über 10 Webanwendungen mit JavaScript, Angular und React entwickelt."
             },
             {
                 "title": "Responsive Design",
@@ -72,6 +72,28 @@
         "highlight": "Ihre",
         "highlightAfter": "Online-Präsenz auf das nächste Level zu bringen?",
         "text": "Setzen Sie sich noch heute mit mir in Verbindung und lassen Sie uns besprechen, wie ich Ihnen helfen kann, Ihre Ziele zu erreichen.",
-        "button": "Nachricht schicken"
+        "button": "Nachricht schicken",
+        "imprint": "Impressum",
+        "privacyPolicy": "Datenschutzerklärung"
+    },
+    "imprint": {
+        "title": "Impressum",
+        "subtitle1": "Angaben gemäß 5 TMG",
+        "subtitle2": "Kontakt"
+    },
+    "privacyPolicy": {
+        "title": "Datenschutzerklärung",
+        "generalInformationTitle": "Allgemeine Hinweise",
+        "generalInformationText": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.",
+        "dataCollectionTitle": "Datenerfassung auf dieser Website",
+        "responsibleTitle": "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
+        "responsibleText": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen.",
+        "dataCollectionMethodTitle": "Wie erfassen wir Ihre Daten?",
+        "dataCollectionMethodText1": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.",
+        "dataCollectionMethodText2": "Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.",
+        "dataUsageTitle": "Wofür nutzen wir Ihre Daten?",
+        "dataUsageText": "Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.",
+        "dataRightsTitle": "Welche Rechte haben Sie bezüglich Ihrer Daten?",
+        "dataRightsText": "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu."
     }
 }
