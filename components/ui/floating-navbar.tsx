@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { getNavitems } from "@/lib/data";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 
 export const FloatingNav = ({ locales, lang }: ClientLocalesParams) => {
