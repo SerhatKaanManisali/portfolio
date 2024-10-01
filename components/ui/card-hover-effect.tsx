@@ -11,7 +11,7 @@ export const HoverEffect = ({
     linkText,
 }: HoverEffectParams
 ) => {
-    let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
         <div
