@@ -14,7 +14,7 @@ const TechStack = ({ locales }: ClientLocalesParams) => {
 
             <Title highlight={highlight} />
 
-            <InfiniteMovingCards items={techStack} speed="fast" />
+            <InfiniteMovingCards items={techStack} speed="normal" />
 
         </section>
     );

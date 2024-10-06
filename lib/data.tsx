@@ -66,6 +66,10 @@ export const techStack = [
         src: "/tech-stack/typescript-icon.svg"
     },
     {
+        name: "Bootstrap",
+        src: "/tech-stack/bootstrap-icon.svg"
+    },
+    {
         name: "REST API",
         src: "/tech-stack/rest-api-icon.svg"
     },
