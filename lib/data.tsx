@@ -50,6 +50,14 @@ export const techStack = [
         src: "/tech-stack/tailwind-css-icon.svg"
     },
     {
+        name: "HTML",
+        src: "/tech-stack/html-icon.svg"
+    },
+    {
+        name: "CSS",
+        src: "/tech-stack/css-icon.svg"
+    },
+    {
         name: "JavaScript",
         src: "/tech-stack/javascript-icon.svg"
     },

@@ -37,7 +37,7 @@
 
 @layer base {
     * {
-        @apply box-border m-0 !scroll-smooth;
+        @apply box-border m-0 !scroll-smooth text-white;
     }
 
     body {
