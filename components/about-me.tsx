@@ -14,7 +14,6 @@ const AboutMe = ( {locales} : ClientLocalesParams) => {
             description: dictionary[0].description,
             className: "grid-item-lg",
             image: "/bento-images/bento-grid-image-0.png",
-            spareImage: "/grid.png",
         },
         {
             id: 1,
